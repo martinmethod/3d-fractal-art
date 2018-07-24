@@ -1,0 +1,35 @@
+// =========================| Arrows |========================= //
+
+
+
+.module-gallery .arrows {
+  @media screen and (min-width: $breakpoint-desktop) {
+    @include transition(all $transition-speed linear);
+
+    &[data-loaded='false'] {
+      [data-direction='previous'] {
+        left: -#{$arrow-size + $offset-main};
+      }
+
+      [data-direction='next'] {
+        right: -#{$arrow-size + $offset-main};
+      }
+    }
+  }
+
+  [data-direction='previous'] {
+    left: $offset-main;
+
+    span {
+      background-image: url('../../../assets/icons/icon-arrow-left.svg');
+    }
+  }
+
+  [data-direction='next'] {
+    right: $offset-main;
+
+    span {
+      background-image: url('../../../assets/icons/icon-arrow-right.svg');
+    }
+  }
+}

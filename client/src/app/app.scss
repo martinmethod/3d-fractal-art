@@ -1,0 +1,38 @@
+// =========================| App |========================= //
+
+
+
+//--------------------------| HTML
+
+html {
+  -webkit-tap-highlight-color: rgba($col-black, 0); // 6
+}
+
+
+//--------------------------| Body
+
+body {
+  min-width: $app-min-width;
+}
+
+
+//--------------------------| Breakpoints
+
+@media screen and (max-width: $breakpoint-desktop - 1) {
+  .head {
+    position: relative;
+    z-index: 2;
+    height: 74px;
+    background-color: rgba($col-black, .66);
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 479px),
+       screen and (orientation: portrait) and (max-width: 319px) and (max-height: 479px) {
+  .module-author,
+  .po-description-box,
+  .po-nav,
+  .pm-toolbar {
+    display: none;
+  }
+}

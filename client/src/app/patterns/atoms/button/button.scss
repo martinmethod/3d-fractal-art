@@ -1,0 +1,56 @@
+// =========================| Button |========================= //
+
+
+
+.pa-button {
+
+  //--------------------------| Variables
+
+  $bgr: darken($col-cyan, 20%);
+
+
+  //--------------------------| Base
+
+  @include transition(all .1s linear);
+  @include border-radius(3px);
+  @include display-flex();
+
+  max-width: 180px;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &,
+  &:hover {
+    color: $col-white;
+  }
+
+
+  //--------------------------| Types
+
+  &:not([class*='pa-button-type']) {
+    background-color: $bgr;
+
+    &:hover {
+      background-color: lighten($bgr, 10%);
+    }
+  }
+
+  &.pa-button-type-light {
+    background-color: lighten($bgr, 20%);
+
+    &:hover {
+      background-color: lighten($bgr, 30%);
+    }
+  }
+
+
+  //--------------------------| Use cases
+
+  &.db + .pa-button.db {
+    margin-top: 10px;
+  }
+
+
+} // .pa-button

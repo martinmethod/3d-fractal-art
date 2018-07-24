@@ -1,0 +1,26 @@
+// =========================| Title |========================= //
+
+
+
+.pa-title {
+
+  //--------------------------| Base
+
+  @extend %ph-titles;
+
+  top: 12px;
+  font-size: 20px;
+  white-space: nowrap;
+
+  a {
+    @include transition(border $transition-speed linear);
+
+    color: $col-white;
+
+    &:hover {
+      border-bottom: 1px solid rgba($col-white, .3);
+    }
+  }
+
+
+} // .pa-title

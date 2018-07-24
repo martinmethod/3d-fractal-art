@@ -1,0 +1,24 @@
+// =========================| Author |========================= //
+
+
+
+
+.module-author {
+
+  //--------------------------| Popover
+
+  .pm-popover {
+    width: $app-min-width - 10px;
+  }
+
+
+  //--------------------------| Breakpoints
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    .pm-popover {
+      width: $author-width;
+    }
+  }
+
+
+} // .module-author

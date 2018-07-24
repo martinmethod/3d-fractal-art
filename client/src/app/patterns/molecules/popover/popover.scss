@@ -1,0 +1,74 @@
+// =========================| Popover |========================= //
+
+
+
+.pm-popover {
+
+  //--------------------------| Variables
+
+  $offset: 5px;
+
+
+  //--------------------------| Base
+
+  @include translateX(-120%);
+  @include transition(transform $transition-speed linear);
+  @include border-radius(0 5px 5px 0);
+  @include box-shadow($box-shadow);
+  @include box-sizing(border-box);
+  @include display-flex();
+  @include flex-direction(column);
+
+  position: fixed;
+  top: 72px;
+  z-index: 2;
+  height: calc(100vh - 122px);
+  overflow: hidden;
+  background-color: $bgr-popover;
+
+
+  //--------------------------| States
+
+  // Visible
+  &[data-visible='true'] {
+    @include translateX(0%);
+  }
+
+
+  //--------------------------| Breakpoints
+
+  //@media screen and (min-width: $breakpoint-tablet) {
+  //  &[data-visible='true'] {
+  //    @include translateX(110%);
+  //  }
+  //}
+
+
+  //--------------------------| X-button
+
+  .pa-x-button {
+    position: absolute;
+    top: $offset - 1;
+    right: $offset;
+  }
+
+
+  //--------------------------| Title
+
+  .ttl {
+    padding: 8px $offset;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+
+  //--------------------------| Text
+
+  .pm-text {
+    padding: 30px;
+  }
+
+
+} // .pm-popover

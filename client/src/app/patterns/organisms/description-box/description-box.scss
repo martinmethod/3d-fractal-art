@@ -1,0 +1,48 @@
+// =========================| Description box |========================= //
+
+
+
+.po-description-box {
+
+  //--------------------------| Base
+
+  @include border-radius(5px);
+  @include box-shadow($box-shadow);
+
+  position: absolute;
+  right: $offset-main;
+  bottom: 50px;
+  z-index: 2;
+  width: calc(100% - #{$offset-main * 2});
+  overflow: hidden;
+  background-color: $bgr-popover;
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    @include transition(right $transition-speed linear);
+
+    &[data-loaded='false'] {
+      right: -#{$description-box-width + $offset-main + 10};
+    }
+  }
+
+
+  //--------------------------| Breakpoints
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    bottom: 80px;
+  }
+
+  @media screen and (min-width: $breakpoint-phone) {
+    width: $description-box-width;
+  }
+
+
+  //--------------------------| Button
+
+  .pa-button {
+    display: block;
+    margin: 0 auto;
+  }
+
+
+} // .po-description-box

@@ -1,0 +1,8 @@
+{
+  "controllersList": [
+    "gallery",
+    "author",
+    "contact",
+    "player"
+  ]
+}

@@ -1,0 +1,50 @@
+// =========================| Data: Common |========================= //
+
+
+
+//--------------------------| Colors
+
+$col-black: #000;
+$col-gray-darker: #222;
+$col-gray-dark: #333;
+$col-gray-mid: #666;
+$col-gray-light: #999;
+$col-white: #fff;
+$col-cyan: #1ca9d9;
+
+
+//--------------------------| Dimensions
+
+$app-min-width: 320px;
+$icon-size: 30px;
+$arrow-size: 24px;
+$nav-width: 220px;
+$author-width: 400px;
+$description-box-width: 190px;
+
+
+//--------------------------| Offsets
+
+$offset-main: 10px;
+
+
+//--------------------------| Backgrounds
+
+$bgr-popover: $col-white;
+
+
+//--------------------------| Breakpoints
+
+$breakpoint-phone:    576px;
+$breakpoint-tablet:   768px;
+$breakpoint-desktop: 1024px;
+
+
+//--------------------------| Transitions
+
+$transition-speed: .15s;
+
+
+//--------------------------| Shadows
+
+$box-shadow: 2px 0 10px -2px  rgba($col-black, .9);

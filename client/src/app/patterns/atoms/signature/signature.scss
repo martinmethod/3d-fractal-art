@@ -1,0 +1,18 @@
+// =========================| Signature |========================= //
+
+
+
+
+.pa-signature {
+
+  //--------------------------| Base
+
+  @include user-select(none);
+
+  padding-right: 5px;
+  font-size: .8em;
+  font-style: italic;
+  text-align: right;
+
+
+} // .pa-signature

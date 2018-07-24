@@ -1,0 +1,74 @@
+// =========================| Navigation |========================= //
+
+
+
+.po-nav {
+
+  //--------------------------| Base
+
+  @include user-select(none);
+
+  width: $nav-width;
+
+  .models-nav {
+    @include flex(1);
+
+    .models-list {
+      padding: 10px 0;
+      margin: 0;
+      overflow: auto;
+      font-weight: 300;
+      list-style: none;
+
+      li {
+        position: relative;
+
+        a {
+          @include transition(background-color .1s linear);
+          @include ellipsis();
+
+          position: relative;
+          display: block;
+          padding: 5px 36px 5px 10px;
+          line-height: 1.3;
+
+          &:hover {
+            color: darken($col-cyan, 20%);
+            background-color: rgba($col-black, .05);
+          }
+
+          &[data-selected='true'] {
+            color: $col-gray-dark;
+            pointer-events: none;
+          }
+
+          i {
+            $size: 14px;
+
+            @include translateY(-50%);
+
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            width: $size;
+            height: $size;
+            cursor: help;
+            content: '';
+            background: url('../../../../assets/icons/icon-picture.svg') no-repeat center;
+            background-size: $size auto;
+          }
+        }
+      }
+    }
+  }
+
+
+  //--------------------------| Popover
+
+  .pm-popover {
+    width: $nav-width;
+    min-width: $nav-width;
+  }
+
+
+} // .po-nav

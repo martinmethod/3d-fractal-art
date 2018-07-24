@@ -1,0 +1,47 @@
+// =========================| Slider arrow |========================= //
+
+
+
+.pa-slider-arrow {
+
+  //--------------------------| Base
+
+  @include translateY(-50%);
+
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: lowercase;
+  cursor: pointer;
+
+  @media screen and (max-width: $breakpoint-desktop - 1) {
+    @include translateY(0);
+
+    top: 25px;
+  }
+
+  span {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: $arrow-size;
+    height: $arrow-size;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $arrow-size auto;
+  }
+
+  &,
+  &:hover {
+    color: $col-white;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+
+} // .pa-slider-arrow

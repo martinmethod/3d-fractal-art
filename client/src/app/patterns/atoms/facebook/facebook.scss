@@ -1,0 +1,28 @@
+// =========================| Facebook |========================= //
+
+
+
+.pa-facebook {
+
+  //--------------------------| Variables
+
+  $size: 30px;
+
+
+  //--------------------------| Base
+
+  @include border-radius(50%);
+
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  display: block;
+  width: $size;
+  height: $size;
+  background: url('../../../../assets/icons/icon-social-facebook.svg') no-repeat 3px 4px;
+  background-color: $col-gray-darker;
+  background-size: 66% auto;
+
+
+} // .pa-facebook

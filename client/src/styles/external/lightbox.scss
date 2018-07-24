@@ -1,0 +1,67 @@
+// =========================| External: Lightbox |========================= //
+
+
+
+//--------------------------| Variables
+
+$lightbox-height-size: 40px;
+
+
+//--------------------------| Outer
+
+.ril__outer {
+  background-color: $col-white;
+}
+
+
+//--------------------------| Toolbar
+
+.ril-toolbar {
+  align-items: center;
+  background-color: $col-white;
+}
+
+.ril-toolbar,
+.ril__toolbarSide {
+  height: 30px;
+  line-height: 34px;
+}
+
+.ril__toolbarItem {
+  font-size: 18px;
+  line-height: 1.5 !important;
+  color: $col-gray-dark;
+}
+
+.ril__toolbarLeftSide {
+  padding-left: 10px;
+}
+
+.ril__toolbarRightSide {
+  padding-right: 4px;
+}
+
+
+//--------------------------| X-close
+
+.ril-close {
+  @include transition(color $transition-speed linear);
+  @include opacity(1);
+
+  width: $icon-size;
+  height: $icon-size;
+  font-size: 16px;
+  line-height: 1 !important;
+  color: $col-cyan;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+
+  &::after {
+    content: '✕';
+  }
+
+  &:hover {
+    color: rgba($col-cyan, .7) !important;
+  }
+}
