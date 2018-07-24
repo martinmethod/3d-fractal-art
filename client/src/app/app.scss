@@ -28,7 +28,7 @@ body {
 }
 
 @media screen and (orientation: landscape) and (max-height: 479px),
-       screen and (orientation: portrait) and (max-width: 319px) and (max-height: 479px) {
+  screen and (orientation: portrait) and (max-width: 319px) and (max-height: 479px) {
   .module-author,
   .po-description-box,
   .po-nav,
