@@ -1,0 +1,15 @@
+// =========================| Components: Email |========================= //
+
+
+
+.email {
+  @extend %ph-box;
+
+  left: 130px;
+  width: $icon-size;
+  height: $icon-size;
+
+  span {
+    background-image: url(data-uri('src/data-uri/images/icon-email.svg'));
+  }
+}

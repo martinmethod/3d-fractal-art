@@ -1,0 +1,31 @@
+// =========================| Components: App title |========================= //
+
+
+
+.ttl-app,
+.ttl-sub {
+  @extend %ph-showover;
+
+  @include translateX(-50%);
+
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  margin: 0;
+  color: $col-white;
+  text-align: center;
+}
+
+.ttl-app {
+  top: 12px;
+  font-size: 20px;
+
+  &:hover {
+    border-bottom: 1px solid rgba($col-white, .3);
+  }
+}
+
+.ttl-sub {
+  top: 40px;
+  font-size: 16px;
+}

@@ -1,0 +1,63 @@
+{
+  "name": "3d_fractal_art",
+  "title": "3D Fractal Art",
+  "description": "I've been dealing with the most complex Math object – Fractals – since August 1985. Now that 3D printing is a fact I can introduce you the beauty of formulas incarnated in Fractal Wall Art, Sculptures & Culinary.",
+  "keywords": [
+    "peter",
+    "peter petrov",
+    "art",
+    "fractal",
+    "fractals",
+    "printable",
+    "3D"
+  ],
+  "homepage": "http://art.peter.bg",
+  "cover": "http://art.peter.bg/images/cover.jpg",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:hityr5yr/art.git"
+  },
+  "author": {
+    "name": "Martin Metodiev",
+    "email": "metodiev.martin@gmail.com",
+    "url": "http://www.martinmetodiev.com"
+  },
+  "devDependencies": {
+    "compass-mixins": "^0.12.10",
+    "css-browser-selector": "^0.6.5",
+    "grunt": "^1.0.3",
+    "grunt-banner": "^0.6.0",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^2.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-open": "^0.2.3",
+    "grunt-puglint": "^1.0.0",
+    "grunt-real-favicon": "^0.2.2",
+    "grunt-sass": "^2.0.0",
+    "grunt-sass-lint": "^0.2.4",
+    "http-rewrite-middleware": "^0.1.6",
+    "jquery": "^3.3.1",
+    "lib-sass-data-uri": "0.0.2",
+    "lightbox2": "^2.10.0",
+    "load-grunt-config": "^0.19.2",
+    "load-grunt-tasks": "^3.2.0",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "node-sass": "^4.9.2",
+    "node-sass-globbing": "0.0.23",
+    "requirejs": "^2.3.5",
+    "time-grunt": "^1.4.0"
+  },
+  "scripts": {
+    "start": "npm install grunt clean:all && grunt dev"
+  },
+  "sasslintConfig": "configs/linters/.sass-lint.yml"
+}

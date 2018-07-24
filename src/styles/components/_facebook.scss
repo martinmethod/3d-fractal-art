@@ -1,0 +1,23 @@
+// =========================| Components: Facebook |========================= //
+
+
+
+.facebook {
+  @extend %ph-showover;
+
+  $size: 30px;
+  $bgr-color: #222;
+
+  @include border-radius(50%);
+
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  display: block;
+  width: $size;
+  height: $size;
+  background: url(data-uri('src/data-uri/images/icon-social-facebook.svg')) no-repeat 3px 4px;
+  background-color: $bgr-color;
+  background-size: 66% auto;
+}

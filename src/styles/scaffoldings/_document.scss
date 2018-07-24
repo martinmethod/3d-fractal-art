@@ -1,0 +1,23 @@
+// =========================| Scaffoldings: Document |========================= //
+
+
+
+//--------------------------| Body
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  color: $col-gray-dark;
+  background-color: $col-gray-dark;
+}
+
+
+//--------------------------| Labels
+
+label[for] {
+  cursor: pointer;
+}
