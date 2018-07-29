@@ -121,7 +121,7 @@ const config = {
     }]),
     new FaviconsWebpackPlugin({
       // Your source logo
-      logo: './client/src/assets/images/logo.jpg',
+      logo: './client/src/assets/images/logo.png',
       // The prefix for all image files (might be a folder or a name)
       prefix: 'icons-[hash]/',
       // Emit all stats of the generated icons
@@ -134,7 +134,7 @@ const config = {
       // Inject the html into the html-webpack-plugin
       inject: true,
       // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-      background: '#fff',
+      background: '#1ca9d9',
       // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
       title: pkg.title
     }),

@@ -18,7 +18,7 @@ import './styles/scaffoldings/document.scss';
 import './styles/scaffoldings/links.scss';
 
 // Images
-import './assets/images/logo.jpg';
+import './assets/images/logo.png';
 
 // App
 import App from './app';
