@@ -2,19 +2,32 @@
 
 
 
-//--------------------------| Body
+
+//--------------------------| Document
+
+html {
+  position: relative;
+  -webkit-tap-highlight-color: rgba($col-black, 0);
+}
 
 body {
   @include user-select(none);
 
-  position: relative;
+  position: fixed;
   width: 100vw;
+  min-width: $app-min-width;
   height: 100vh;
   margin: 0;
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
   color: $col-gray-dark;
   background-color: $col-gray-dark;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 
