@@ -29,3 +29,10 @@ body {
     display: none;
   }
 }
+
+@media screen and (orientation: landscape) and (max-height: 479px) {
+  .head,
+  .pa-facebook {
+    display: none;
+  }
+}
