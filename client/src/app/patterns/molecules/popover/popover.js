@@ -18,13 +18,6 @@ import './popover.scss';
 //--------------------------| Body
 
 class Popover extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleEscapeKey = this.handleEscapeKey.bind(this);
-    this.setWrapperRef = this.setWrapperRef.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-  }
-
   componentDidMount() {
     if (this.props.visibility) {
       document.addEventListener('keyup', this.handleEscapeKey, false);
@@ -43,21 +36,21 @@ class Popover extends React.Component {
     }
   }
 
-  handleEscapeKey(e) {
+  handleEscapeKey = (e) => {
     if (e.key === 'Escape') {
       this.props.dispatch(changePopoverState(''));
     }
-  }
+  };
 
-  handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+  handleClickOutside = (e) => {
+    if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
       this.props.dispatch(changePopoverState(''));
     }
-  }
+  };
 
-  setWrapperRef(node) {
+  setWrapperRef = (node) => {
     this.wrapperRef = node;
-  }
+  };
 
   render() {
     return (

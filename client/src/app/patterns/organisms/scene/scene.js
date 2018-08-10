@@ -25,10 +25,11 @@ class Scene extends React.Component {
     desktop: false
   };
 
-  constructor(props) {
-    super(props);
-    this.updateDimensions = this.updateDimensions.bind(this);
-  }
+  updateDimensions = () => {
+    this.setState(() => ({
+      desktop: window.innerWidth >= 1024
+    }));
+  };
 
   loadModelInfo() {
     const model = getModelById(this.props.id);
@@ -39,12 +40,6 @@ class Scene extends React.Component {
     setTimeout(() => {
       this.props.dispatch(loadModelInfo(this.props.id));
     }, timeout);
-  }
-
-  updateDimensions() {
-    this.setState(() => ({
-      desktop: window.innerWidth >= 1024
-    }));
   }
 
   componentDidMount() {
