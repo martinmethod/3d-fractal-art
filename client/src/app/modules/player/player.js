@@ -20,15 +20,12 @@ import audioFile from '../../../assets/audio/music.mp3';
 class Player extends React.PureComponent {
   constructor(props) {
     super(props);
+
     this.audioRef = React.createRef();
   }
 
   applyMode() {
     this.audioRef.current[this.props.playerMode]();
-  }
-
-  componentDidMount() {
-    this.applyMode();
   }
 
   componentDidUpdate() {
@@ -37,7 +34,11 @@ class Player extends React.PureComponent {
 
   render() {
     return (
-      <audio className='module-player' loop='loop' ref={this.audioRef}>
+      <audio
+        className='module-player'
+        loop='loop'
+        ref={this.audioRef}
+      >
         <source src={audioFile} type='audio/mpeg'/>
       </audio>
     );

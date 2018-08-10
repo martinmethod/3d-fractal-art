@@ -9,6 +9,10 @@ import { hot } from 'react-hot-loader';
 
 // Libraries
 import React from 'react';
+import { connect } from 'react-redux';
+
+// Actions
+import { playMusic } from './actions/player';
 
 // Atoms
 import Title from './patterns/atoms/title';
@@ -37,9 +41,26 @@ class App extends React.PureComponent {
   defineControllers = () => controllersList.filter(controller =>
     config[controller] !== undefined);
 
+  state = {
+    interaction: false
+  };
+
   render() {
     return (
-      <div id='app'>
+      <div
+        id='app'
+        onMouseEnter={() => {
+          if (!this.state.interaction) {
+            if (this.props.player.mode === '') {
+              this.props.dispatch(playMusic());
+            }
+
+            this.setState(prevState => ({
+              interaction: !prevState.interaction
+            }));
+          }
+        }}
+      >
         <header className='head'>
           <Title />
           <Subtitle>{config.subtitle}</Subtitle>
@@ -55,6 +76,13 @@ class App extends React.PureComponent {
 }
 
 
+//--------------------------| State to Props
+
+const mapStateToProps = state => ({
+  player: state.player
+});
+
+
 //--------------------------| Export
 
-export default hot(module)(App);
+export default connect(mapStateToProps)(hot(module)(App));

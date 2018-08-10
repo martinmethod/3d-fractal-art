@@ -13,7 +13,7 @@ const localState = JSON.parse(localStorage.getItem('state'));
 const playerReducerDefaultState = localState && localState.player ?
   localState.player :
   {
-    mode: player.mode,
+    mode: '',
     controllerTooltipText: player.mode === 'play' ?
       player.controllerTooltipText.pause :
       player.controllerTooltipText.play
