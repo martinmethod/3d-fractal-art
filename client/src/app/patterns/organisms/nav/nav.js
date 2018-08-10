@@ -43,7 +43,7 @@ import { gallery } from '../../../../data/config.json';
 
 //--------------------------| Body
 
-class Nav extends React.Component {
+class Nav extends React.PureComponent {
   state = {
     mouseover: ''
   };

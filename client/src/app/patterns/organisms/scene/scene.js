@@ -20,7 +20,7 @@ import { getModelById, getProductUrl } from '../../../helpers/models';
 
 //--------------------------| Body
 
-class Scene extends React.Component {
+class Scene extends React.PureComponent {
   state = {
     desktop: false
   };

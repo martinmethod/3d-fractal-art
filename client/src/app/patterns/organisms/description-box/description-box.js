@@ -26,7 +26,7 @@ import { gallery } from '../../../../data/config.json';
 
 //--------------------------| Body
 
-class DescriptionBox extends React.Component {
+class DescriptionBox extends React.PureComponent {
   state = {
     isLightboxOpen: false
   };

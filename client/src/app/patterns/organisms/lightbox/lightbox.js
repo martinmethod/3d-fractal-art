@@ -14,7 +14,7 @@ import './lightbox.scss';
 
 //--------------------------| Body
 
-export default class Sample extends React.Component {
+export default class Sample extends React.PureComponent {
   render() {
     return (
       <Lightbox

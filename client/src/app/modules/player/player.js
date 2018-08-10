@@ -17,7 +17,7 @@ import audioFile from '../../../assets/audio/music.mp3';
 
 //--------------------------| Body
 
-class Player extends React.Component {
+class Player extends React.PureComponent {
   constructor(props) {
     super(props);
     this.audioRef = React.createRef();

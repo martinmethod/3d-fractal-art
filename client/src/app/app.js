@@ -33,7 +33,7 @@ import './app.scss';
 
 //--------------------------| Body
 
-class App extends React.Component {
+class App extends React.PureComponent {
   defineControllers = () => controllersList.filter(controller =>
     config[controller] !== undefined);
 
