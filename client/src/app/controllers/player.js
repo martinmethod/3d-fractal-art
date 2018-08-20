@@ -17,14 +17,15 @@ import IconButton from '../patterns/atoms/icon-button';
 
 //--------------------------| Body
 
-const PlayerController = ({ dispatch, player }) => (
+const PlayerController = props => (
   <IconButton
     role='player'
-    title={player.controllerTooltipText}
-    mode={player.mode}
+    className={props.className}
+    title={props.player.controllerTooltipText}
+    mode={props.player.mode}
     onClick={() => {
-      const action = player.mode === 'play' ? pauseMusic : playMusic;
-      dispatch(action());
+      const action = props.player.mode === 'play' ? pauseMusic : playMusic;
+      props.dispatch(action());
     }}
   />
 );

@@ -11,8 +11,8 @@ import Lightbox from 'react-image-lightbox';
 
 // Styles
 import 'react-image-lightbox/style.css';
-import '../../../../styles/external/lightbox.scss';
-import './description-box.scss';
+import lightbox from '../../../../styles/external/lightbox.scss';
+import styles from './description-box.scss';
 
 // Atoms
 import Button from '../../atoms/button';
@@ -43,15 +43,15 @@ class DescriptionBox extends React.PureComponent {
     } = this.props.model;
 
     return (
-      <div className='po-description-box' data-loaded={this.props.loaded}>
+      <div className={styles.root} data-loaded={this.props.loaded}>
         <div className='content'>
-          <Text>
+          <Text className={styles.text}>
             <p>{description}</p>
             {
               example &&
               <Button
                 block
-                type='pa-button-type-light'
+                type='light'
                 onClick={() => this.setState(() => ({ isLightboxOpen: true }))}
               >
                 See example

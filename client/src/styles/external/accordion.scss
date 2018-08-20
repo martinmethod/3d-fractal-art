@@ -2,70 +2,75 @@
 // EXTERNAL: ACCORDION
 
 
-//--------------------------| Variables
+:global {
+
+  //--------------------------| Variables
+
+  //
 
 
+  //--------------------------| Base
 
+  .accordion {
+    @include border-radius(0);
+    @include display-flex();
+    @include flex-direction(column);
+    @include flex(1);
 
-//--------------------------| Base
-
-.accordion {
-  @include border-radius(0);
-  @include display-flex();
-  @include flex-direction(column);
-  @include flex(1);
-
-  font-size: 16px;
-  border: 0;
-}
-
-
-//--------------------------| Item
-
-.accordion__item {
-  @include display-flex();
-  @include flex-direction(column);
-
-  & + .accordion__item {
-    border-top-color: $col-gray-dark;
-  }
-}
-
-
-//--------------------------| Title
-
-.accordion__title {
-  width: auto;
-  padding: .5em .5em .5em .7em;
-  font-weight: 300;
-  color: inherit;
-  text-align: center;
-  background-color: transparent;
-  outline: none;
-
-  // Hover
-  &:hover {
-    color: $col-white;
-    background-color: $col-cyan;
+    font-size: 16px;
+    border: 0;
   }
 
-  // Selected
-  &[aria-selected='true'] {
-    color: $col-white;
-    pointer-events: none;
-    background-color: darken($col-cyan, 20%);
+
+  //--------------------------| Item
+
+  .accordion__item {
+    @include display-flex();
+    @include flex-direction(column);
+
+    & + .accordion__item {
+      border-top-color: $col-gray-dark;
+    }
   }
-}
 
 
-//--------------------------| Body
+  //--------------------------| Title
 
-.accordion__body {
-  @include flex(1);
+  .accordion__title {
+    width: auto;
+    padding: 0.5em 0.5em 0.5em 0.7em;
+    font-weight: 300;
+    color: inherit;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
 
-  padding: 0;
+    // Hover
+    &:hover {
+      color: $col-white;
+      background-color: $col-cyan;
+    }
 
-  &[aria-hidden='false'] {
-    height: calc(100vh - 383px);
+    // Selected
+    &[aria-selected='true'] {
+      color: $col-white;
+      pointer-events: none;
+      background-color: darken($col-cyan, 20%);
+    }
   }
-}
+
+
+  //--------------------------| Body
+
+  .accordion__body {
+    @include flex(1);
+
+    padding: 0;
+
+    &[aria-hidden='false'] {
+      height: calc(100vh - 383px);
+    }
+  }
+
+
+} // :global

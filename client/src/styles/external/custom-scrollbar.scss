@@ -2,28 +2,30 @@
 // EXTERNAL: CUSTOM SCROLLBAR
 
 
-.custom-scroll {
+:global {
 
-  //--------------------------| Handle
+  .rcs-custom-scroll {
 
-  .custom-scroll-handle {
-    pointer-events: all;
-    cursor: pointer;
-  }
+    //--------------------------| Handle
 
-
-  //--------------------------| Bar
-
-  .inner-handle {
-    @include transition(background-color $transition-speed linear);
-
-    background-color: rgba($col-black, .3);
-
-    &:hover,
-    &:active {
-      background-color: rgba($col-black, .6);
+    .rcs-custom-scroll-handle {
+      pointer-events: all;
+      cursor: pointer;
     }
-  }
 
+    //--------------------------| Bar
 
-} // .custom-scroll
+    .rcs-inner-handle {
+      @include transition(background-color $transition-speed linear);
+
+      background-color: rgba($col-black, 0.3);
+
+      &:hover,
+      &:active {
+        background-color: rgba($col-black, 0.6);
+      }
+    }
+
+  } // .rcs-custom-scroll
+
+} // :global

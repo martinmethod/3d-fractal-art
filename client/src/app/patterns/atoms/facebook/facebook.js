@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './facebook.scss';
+import styles from './facebook.scss';
 
 // Data
 import { facebook } from '../../../../data/config.json';
@@ -19,7 +19,7 @@ import { facebook } from '../../../../data/config.json';
 
 const Facebook = props => (
   <a
-    className='pa-facebook'
+    className={styles.root}
     href={facebook.controllerURL}
     target='_blank'
     rel='noopener noreferrer'

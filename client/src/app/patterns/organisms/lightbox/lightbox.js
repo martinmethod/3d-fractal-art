@@ -9,7 +9,7 @@ import React from 'react';
 import Lightbox from 'react-images';
 
 // Styles
-import './lightbox.scss';
+import styles from './lightbox.scss';
 
 
 //--------------------------| Body

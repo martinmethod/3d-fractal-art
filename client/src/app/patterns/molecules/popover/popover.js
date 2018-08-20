@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import changePopoverState from '../../../actions/popover';
 
 // Styles
-import './popover.scss';
+import styles from './popover.scss';
 
 
 //--------------------------| Body
@@ -55,7 +55,7 @@ class Popover extends React.Component {
   render() {
     return (
       <div
-        className='pm-popover'
+        className={`${styles.root} ${this.props.className}`}
         data-visible={ this.props.visibility }
         ref={this.setWrapperRef}
       >

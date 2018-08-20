@@ -2,10 +2,9 @@
 // ORGANISMS: SCENE
 
 
-.po-scene {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   position: fixed;
   top: 0;
   right: 0;
@@ -18,32 +17,30 @@
     width: 100vw;
     height: 100vh;
   }
+}
 
 
-  //--------------------------| Frame
+//--------------------------| Frame
 
-  iframe {
-    display: block;
+.frame {
+  display: block;
+}
+
+
+//--------------------------| Image
+
+.image {
+  @include translate(-50%, -50%);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: auto;
+  height: 100%;
+
+  @media (min-aspect-ratio: 16/9) {
+    width: 100%;
+    height: auto;
   }
-
-
-  //--------------------------| Image
-
-  img {
-    @include translate(-50%, -50%);
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: auto;
-    height: 100%;
-
-    @media (min-aspect-ratio: 16/9) {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-
-} // .po-scene
+}

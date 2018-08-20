@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './subtitle.scss';
+import styles from './subtitle.scss';
 
 
 //--------------------------| Body
 
 
 const Subtitle = props => (
-  <h2 className='pa-subtitle'>
+  <h2 className={styles.root}>
     {props.children}
   </h2>
 );

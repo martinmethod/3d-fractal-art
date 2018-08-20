@@ -9,7 +9,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Styles
-import './title.scss';
+import styles from './title.scss';
 
 // Actions
 import changePopoverState from '../../../actions/popover';
@@ -26,8 +26,9 @@ const Title = (props) => {
   const title = `3D Fractal Art: ${category.title}`;
 
   return (
-    <h1 className='pa-title'>
+    <h1 className={styles.root}>
       <a
+        className={styles.link}
         onClick={() => {
           if (props.popover.active !== 'nav') {
             props.dispatch(changePopoverState('nav'));

@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './gallery.scss';
+import styles from './gallery.scss';
 
 // Components
 import Arrows from './arrows';
@@ -22,11 +22,11 @@ import DescriptionBox from '../../patterns/organisms/description-box';
 //--------------------------| Body
 
 const Gallery = () => (
-  <section className='module-gallery'>
+  <section className={styles.root}>
     <Arrows />
-    <Scene/>
-    <DescriptionBox/>
-    <Nav/>
+    <Scene />
+    <DescriptionBox />
+    <Nav />
   </section>
 );
 

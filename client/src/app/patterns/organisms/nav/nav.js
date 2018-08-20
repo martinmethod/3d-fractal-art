@@ -18,9 +18,10 @@ import {
 // Styles
 import 'react-accessible-accordion/dist/fancy-example.css';
 import 'react-custom-scroll/dist/customScroll.css';
-import './nav.scss';
 import '../../../../styles/external/accordion.scss';
 import '../../../../styles/external/custom-scrollbar.scss';
+import styles from './nav.scss';
+import popoverStyles from '../../molecules/popover/popover.scss';
 
 // Actions
 import changePopoverState from '../../../actions/popover';
@@ -50,9 +51,10 @@ class Nav extends React.PureComponent {
 
   render() {
     return (
-      <nav className='po-nav'>
-        <Popover visibility={this.props.popover.active === 'nav'}>
+      <nav className={styles.root}>
+        <Popover className={styles.popover} visibility={this.props.popover.active === 'nav'}>
           <XButton
+            className={popoverStyles.xButton}
             onClick={() => {
               if (this.props.popover.active !== 'nav') {
                 this.props.dispatch(changePopoverState('nav'));
@@ -62,10 +64,10 @@ class Nav extends React.PureComponent {
               }
             }}
           />
-          <h2 className='ttl'>{gallery.navLabel}</h2>
+          <h2 className={popoverStyles.ttl}>{gallery.navLabel}</h2>
           <Thumb active={this.state.mouseover} />
 
-          <div className='models-nav'>
+          <div className={styles.modelsNav}>
             <Accordion>
               {
                 models.map((cat, index) => (
@@ -78,11 +80,12 @@ class Nav extends React.PureComponent {
                     </AccordionItemTitle>
                     <AccordionItemBody>
                       <CustomScroll heightRelativeToParent='100%'>
-                        <ul className='models-list'>
+                        <ul className={styles.modelsList}>
                           {
                             cat.models.map(m => (
-                              <li key={m.id}>
+                              <li className={styles.modelItem} key={m.id}>
                                 <a
+                                  className={styles.link}
                                   data-selected={this.props.id === m.id}
                                   onMouseEnter={() => {
                                     this.setState(() => ({

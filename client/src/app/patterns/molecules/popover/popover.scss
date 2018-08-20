@@ -2,15 +2,14 @@
 // MOLECULES: POPOVER
 
 
-.pm-popover {
+//--------------------------| Variables
 
-  //--------------------------| Variables
-
-  $offset: 5px;
+$offset: 5px;
 
 
-  //--------------------------| Base
+//--------------------------| Root
 
+.root {
   @include translateX(-120%);
   @include transition(transform $transition-speed linear);
   @include border-radius(0 5px 5px 0);
@@ -26,35 +25,24 @@
   overflow: hidden;
   background-color: $bgr-popover;
 
-
-  //--------------------------| States
-
-  // Visible
+  // States
   &[data-visible='true'] {
     @include translateX(0%);
   }
 
+  // Text
+  .text {
+    padding: 30px;
+  }
 
-  //--------------------------| Breakpoints
-
-  //@media screen and (min-width: $breakpoint-tablet) {
-  //  &[data-visible='true'] {
-  //    @include translateX(110%);
-  //  }
-  //}
-
-
-  //--------------------------| X-button
-
-  .pa-x-button {
+  // X-button
+  .x-button {
     position: absolute;
     top: $offset - 1;
     right: $offset;
   }
 
-
-  //--------------------------| Title
-
+  // Title
   .ttl {
     padding: 8px $offset;
     margin: 0;
@@ -62,13 +50,5 @@
     font-weight: 300;
     text-align: center;
   }
+}
 
-
-  //--------------------------| Text
-
-  .pm-text {
-    padding: 30px;
-  }
-
-
-} // .pm-popover

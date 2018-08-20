@@ -2,22 +2,22 @@
 // MODULES: AUTHOR
 
 
-.module-author {
+//--------------------------| Root
 
-  //--------------------------| Popover
-
-  .pm-popover {
-    width: $app-min-width - 10px;
+.root {
+  @include mq-mobile() {
+    display: none;
   }
+}
 
 
-  //--------------------------| Breakpoints
+//--------------------------| Popover
+
+.popover {
+  width: $app-min-width - 10px;
 
   @media screen and (min-width: $breakpoint-tablet) {
-    .pm-popover {
-      width: $author-width;
-    }
+    width: $author-width;
   }
+}
 
-
-} // .module-author

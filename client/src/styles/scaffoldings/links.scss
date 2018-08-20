@@ -2,22 +2,25 @@
 // SCAFFOLDINGS: LINKS
 
 
-a,
-.link {
+:global {
 
-  //--------------------------| Base
+  a,
+  .link {
 
-  @include transition(color $transition-speed linear);
+    //--------------------------| Base
 
-  color: $col-cyan;
-  cursor: pointer;
+    @include transition(color $transition-speed linear);
+
+    color: $col-cyan;
+    cursor: pointer;
 
 
-  //--------------------------| Hover
+    //--------------------------| Hover
 
-  &:hover {
-    color: rgba($col-cyan, .7);
+    &:hover {
+      color: rgba($col-cyan, 0.7);
+    }
+
   }
 
-
-}
+} // :global

@@ -2,10 +2,9 @@
 // MOLECULES: TEXT
 
 
-.pm-text {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include user-select(text);
 
   padding: 10px;
@@ -13,30 +12,28 @@
   font-weight: 300;
   line-height: 1.5;
   color: $col-gray-dark;
+}
 
 
-  //--------------------------| Paragraphs
+//--------------------------| Paragraphs
 
-  p {
-    margin: 0 0 15px;
+.paragraph {
+  margin: 0 0 15px;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
+}
 
 
-  //--------------------------| Images
+//--------------------------| Images
 
-  img {
-    @include user-select(none);
+.image {
+  @include user-select(none);
 
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    pointer-events: none;
-  }
-
-
-} // .pm-text
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  pointer-events: none;
+}

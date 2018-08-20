@@ -2,38 +2,35 @@
 // ATOMS: THUMB
 
 
-.pa-thumb {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   position: relative;
   width: 100%;
   height: $nav-width / 1.8181818182;
   background: $col-gray-dark;
+}
 
 
-  //--------------------------| Image
+//--------------------------| Image
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: auto;
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: auto;
 
-    &:not(.current):not(.active) {
-      z-index: 1;
-    }
-
-    &.current {
-      z-index: 2;
-    }
-
-    &.active {
-      z-index: 3;
-    }
+  &:not(.current):not(.active) {
+    z-index: 1;
   }
 
+  &.current {
+    z-index: 2;
+  }
 
-} // .pa-thumb
+  &.active {
+    z-index: 3;
+  }
+}

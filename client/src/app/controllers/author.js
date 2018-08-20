@@ -23,6 +23,7 @@ import { author } from '../../data/config.json';
 const AuthorController = props => (
   <IconButton
     role='author'
+    className={props.className}
     title={author.title}
     active={props.popover.active === 'author'}
     onClick={() => {

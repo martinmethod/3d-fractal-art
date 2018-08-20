@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './signature.scss';
+import styles from './signature.scss';
 
 
 //--------------------------| Body
 
 
 const Signature = props => (
-  <p className='pa-signature'>
+  <p className={styles.root}>
     {props.children}
   </p>
 );

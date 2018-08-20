@@ -10,7 +10,9 @@ import { connect } from 'react-redux';
 import CustomScroll from 'react-custom-scroll';
 
 // Styles
-import './author.scss';
+import styles from './author.scss';
+import textStyles from '../../patterns/molecules/text/text.scss';
+import popoverStyles from '../../patterns/molecules/popover/popover.scss';
 import '../../../styles/external/custom-scrollbar.scss';
 
 // Actions
@@ -35,9 +37,10 @@ import avatar from '../../../assets/images/author.png';
 //--------------------------| Body
 
 const Author = props => (
-  <section className='module-author'>
-    <Popover visibility={props.popover.active === 'author'}>
+  <section className={styles.root}>
+    <Popover className={styles.popover} visibility={props.popover.active === 'author'}>
       <XButton
+        className={popoverStyles.xButton}
         onClick={() => {
           if (props.popover.active !== 'author') {
             props.dispatch(changePopoverState('author'));
@@ -47,17 +50,17 @@ const Author = props => (
           }
         }}
       />
-      <h2 className='ttl'>{author.title}</h2>
+      <h2 className={popoverStyles.ttl}>{author.title}</h2>
 
       <div style={{ flex: 1, minHeight: 0, minWidth: 0 }}>
         <CustomScroll heightRelativeToParent='100%'>
           <div>
-            <Text>
-              <img src={avatar} alt={authorData.name} />
+            <Text className={popoverStyles.text}>
+              <img className={textStyles.image} src={avatar} alt={authorData.name} />
 
               {
                 authorData.text.map((text, index) => (
-                  <p key={index}>{text}</p>
+                  <p className={textStyles.paragraph} key={index}>{text}</p>
                 ))
               }
 

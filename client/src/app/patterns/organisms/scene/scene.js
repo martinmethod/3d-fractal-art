@@ -9,7 +9,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Styles
-import './scene.scss';
+import styles from './scene.scss';
 
 // Actions
 import { loadModelInfo } from '../../../actions/gallery';
@@ -54,10 +54,11 @@ class Scene extends React.PureComponent {
 
   render() {
     return (
-      <div className='po-scene'>
+      <div className={styles.root}>
         {
           this.state.desktop &&
           <iframe
+            className={styles.frame}
             frameBorder='0'
             allow='vr'
             allowFullScreen='false'
@@ -68,7 +69,7 @@ class Scene extends React.PureComponent {
         }
         {
           !this.state.desktop &&
-          <img src={`images/models/${getModelById(this.props.id).category}/${getModelById(this.props.id).name}.jpg`} />
+          <img className={styles.image} src={`images/models/${getModelById(this.props.id).category}/${getModelById(this.props.id).name}.jpg`} />
         }
       </div>
     );

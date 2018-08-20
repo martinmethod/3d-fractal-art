@@ -2,37 +2,17 @@
 // APP
 
 
-//--------------------------| Body
+//--------------------------| Head
 
-body {
-  min-width: $app-min-width;
-}
-
-
-//--------------------------| Breakpoints
-
-@media screen and (max-width: $breakpoint-desktop - 1) {
-  .head {
+.head {
+  @include mq-below-desktop() {
     position: relative;
     z-index: 2;
     height: 74px;
-    background-color: rgba($col-black, .66);
+    background-color: rgba($col-black, 0.66);
   }
-}
 
-@media screen and (orientation: landscape) and (max-height: 479px),
-  screen and (orientation: portrait) and (max-width: 319px) and (max-height: 479px) {
-  .module-author,
-  .po-description-box,
-  .po-nav,
-  .pm-toolbar {
-    display: none;
-  }
-}
-
-@media screen and (orientation: landscape) and (max-height: 479px) {
-  .head,
-  .pa-facebook {
+  @include mq-tight-landscape() {
     display: none;
   }
 }

@@ -2,15 +2,14 @@
 // ATOMS: FACEBOOK
 
 
-.pa-facebook {
+//--------------------------| Variables
 
-  //--------------------------| Variables
-
-  $size: 30px;
+$size: 30px;
 
 
-  //--------------------------| Base
+//--------------------------| Root
 
+.root {
   @include border-radius(50%);
 
   position: absolute;
@@ -24,5 +23,7 @@
   background-color: $col-gray-darker;
   background-size: 66% auto;
 
-
-} // .pa-facebook
+  @include mq-tight-landscape() {
+    display: none;
+  }
+}

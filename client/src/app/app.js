@@ -32,7 +32,7 @@ import config from '../data/config.json';
 import { controllersList } from '../data/controllers.json';
 
 // Styles
-import './app.scss';
+import styles from './app.scss';
 
 
 //--------------------------| Body
@@ -62,7 +62,7 @@ class App extends React.PureComponent {
           }
         }}
       >
-        <header className='head'>
+        <header className={styles.head}>
           <Title />
           <Subtitle>{config.subtitle}</Subtitle>
         </header>

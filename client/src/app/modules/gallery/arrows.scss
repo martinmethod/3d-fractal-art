@@ -2,7 +2,9 @@
 // MODULES: GALLERY > ARROWS
 
 
-.module-gallery .arrows {
+//--------------------------| Root
+
+.root {
   @media screen and (min-width: $breakpoint-desktop) {
     @include transition(all $transition-speed linear);
 
@@ -16,20 +18,26 @@
       }
     }
   }
+}
 
-  [data-direction='previous'] {
-    left: $offset-main;
 
-    span {
-      background-image: url('../../../assets/icons/icon-arrow-left.svg');
-    }
+//--------------------------| Previous
+
+.arrows [data-direction='previous'] {
+  left: $offset-main;
+
+  span {
+    background-image: url('../../../assets/icons/icon-arrow-left.svg');
   }
+}
 
-  [data-direction='next'] {
-    right: $offset-main;
 
-    span {
-      background-image: url('../../../assets/icons/icon-arrow-right.svg');
-    }
+//--------------------------| Next
+
+.arrows [data-direction='next'] {
+  right: $offset-main;
+
+  span {
+    background-image: url('../../../assets/icons/icon-arrow-right.svg');
   }
 }

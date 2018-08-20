@@ -23,6 +23,7 @@ import { gallery } from '../../data/config.json';
 const GalleryController = props => (
   <IconButton
     role='gallery'
+    className={props.className}
     title={gallery.navLabel}
     active={props.popover.active === 'nav'}
     onClick={() => {

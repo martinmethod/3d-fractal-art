@@ -8,14 +8,20 @@
 import React from 'react';
 
 // Styles
-import './x-button.scss';
+import styles from './x-button.scss';
 
 
 //--------------------------| Body
 
 
-const XButton = props => (
-  <a className='pa-x-button link' onClick={props.onClick} title='Close'>✕</a>
+const XButton = ({ onClick, className }) => (
+  <a
+    className={`${styles.root} ${className} link`}
+    onClick={onClick}
+    title='Close'
+  >
+    ✕
+  </a>
 );
 
 

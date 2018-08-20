@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 
 // Styles
-import './thumb.scss';
+import styles from './thumb.scss';
 
 // Data
 import { models } from '../../../../data/models.json';
@@ -19,15 +19,15 @@ import { models } from '../../../../data/models.json';
 //--------------------------| Body
 
 const Thumb = props => (
-  <div className='pa-thumb'>
+  <div className={styles.root}>
     {
       models.map(cat => cat.models.map(m => (
         <img
           key={m.id}
           src={`images/thumbs/${cat.name}/${m.name}.png`}
-          className={classNames({
-            active: m.id === props.active,
-            current: m.id === props.model.id
+          className={classNames(styles.image, {
+            [styles.active]: m.id === props.active,
+            [styles.current]: m.id === props.model.id
           })}
         />
       )))

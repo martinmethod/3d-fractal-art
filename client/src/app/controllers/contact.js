@@ -19,6 +19,7 @@ import { contact } from '../../data/config.json';
 const ContactController = props => (
   <IconButton
     role='contact'
+    className={props.className}
     title={contact.controllerTooltipText}
     onClick={() => {
       window.location.href = `mailto:${contact.email}`;

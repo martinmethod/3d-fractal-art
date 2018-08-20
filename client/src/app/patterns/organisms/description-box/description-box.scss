@@ -2,10 +2,9 @@
 // ORGANISMS: DESCRIPTION BOX
 
 
-.po-description-box {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include border-radius(5px);
   @include box-shadow($box-shadow);
   @include display-flex();
@@ -19,23 +18,28 @@
   overflow: hidden;
   text-align: center;
   background-color: $bgr-popover;
-
-  .pm-text p {
-    text-align: left;
-  }
+}
 
 
-  //--------------------------| Button
+//--------------------------| Text
 
-  .pa-button {
-    display: inline-block;
-    margin: 0 10px;
-  }
+.text p {
+  text-align: left;
+}
 
 
-  //--------------------------| Breakpoints
+//--------------------------| Button
 
-  @media screen and (min-width: $breakpoint-desktop) {
+.button {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+
+//--------------------------| Breakpoints
+
+@media screen and (min-width: $breakpoint-desktop) {
+  .root {
     @include transition(right $transition-speed linear);
 
     bottom: 80px;
@@ -44,15 +48,21 @@
       right: -#{$description-box-width + $offset-main + 10};
     }
   }
+}
 
-  @media screen and (min-width: $breakpoint-phone) {
+@media screen and (min-width: $breakpoint-phone) {
+  .root {
     width: $description-box-width;
-
-    .pa-button {
-      display: block;
-      margin: 0 auto;
-    }
   }
 
+  .button {
+    display: block;
+    margin: 0 auto;
+  }
+}
 
-} // .po-description-box
+@include mq-mobile() {
+  .root {
+    display: none;
+  }
+}

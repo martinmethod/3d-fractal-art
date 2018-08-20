@@ -1,0 +1,30 @@
+//====================================================|
+// MIXINS: MEDIA QUERIES
+
+
+//--------------------------| Below desktop
+
+@mixin mq-below-desktop() {
+  @media screen and (max-width: $breakpoint-desktop - 1) {
+    @content;
+  }
+}
+
+
+//--------------------------| Mobile
+
+@mixin mq-mobile() {
+  @media screen and (orientation: landscape) and (max-height: 479px),
+  screen and (orientation: portrait) and (max-width: 319px) and (max-height: 479px) {
+    @content;
+  }
+}
+
+
+//--------------------------| Tight landscape
+
+@mixin mq-tight-landscape() {
+  @media screen and (orientation: landscape) and (max-height: 479px) {
+    @content;
+  }
+}

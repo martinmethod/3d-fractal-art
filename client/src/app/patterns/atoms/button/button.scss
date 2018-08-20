@@ -2,16 +2,15 @@
 // ATOMS: BUTTON
 
 
-.pa-button {
+//--------------------------| Variables
 
-  //--------------------------| Variables
-
-  $bgr: darken($col-cyan, 20%);
+$bgr: darken($col-cyan, 20%);
 
 
-  //--------------------------| Base
+//--------------------------| Root
 
-  @include transition(all .1s linear);
+.root {
+  @include transition(all 0.1s linear);
   @include border-radius(3px);
   @include display-flex();
 
@@ -20,37 +19,30 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  background-color: $bgr;
 
   &,
   &:hover {
     color: $col-white;
   }
 
-
-  //--------------------------| Types
-
-  &:not([class*='pa-button-type']) {
-    background-color: $bgr;
-
-    &:hover {
-      background-color: lighten($bgr, 10%);
-    }
+  &:hover {
+    background-color: lighten($bgr, 10%);
   }
 
-  &.pa-button-type-light {
-    background-color: lighten($bgr, 20%);
-
-    &:hover {
-      background-color: lighten($bgr, 30%);
-    }
-  }
-
-
-  //--------------------------| Use cases
-
-  &.db + .pa-button.db {
+  // Use cases
+  &[class*='db'] + .root[class*='db'] {
     margin-top: 10px;
   }
+}
 
 
-} // .pa-button
+//--------------------------| Types
+
+.root[data-type='light'] {
+  background-color: lighten($bgr, 20%);
+
+  &:hover {
+    background-color: lighten($bgr, 30%);
+  }
+}

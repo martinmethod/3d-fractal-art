@@ -2,10 +2,9 @@
 // ATOMS: SLIDER ARROW
 
 
-.pa-slider-arrow {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include translateY(-50%);
 
   position: absolute;
@@ -48,6 +47,4 @@
   &:hover {
     text-decoration: underline;
   }
-
-
-} // .pa-slider-arrow
+}

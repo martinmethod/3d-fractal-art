@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './text.scss';
+import styles from './text.scss';
 
 
 //--------------------------| Body
 
-const Text = props => (
-  <div className='pm-text'>
-    {props.children}
+const Text = ({ children, className }) => (
+  <div className={`${styles.root} ${className}`}>
+    {children}
   </div>
 );
 

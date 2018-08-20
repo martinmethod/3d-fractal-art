@@ -2,15 +2,12 @@
 // ATOMS: X-BUTTON
 
 
-.pa-x-button {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   width: $icon-size;
   height: $icon-size;
   line-height: $icon-size;
   text-align: center;
   cursor: pointer;
-
-
-} // .pa-x-button
+}

@@ -9,20 +9,26 @@ import React from 'react';
 import classNames from 'classnames';
 
 // Styles
-import './button.scss';
+import styles from './button.scss';
 import '../../../../styles/tokens/display.scss';
 
 
 //--------------------------| Body
 
-
-const Button = (props) => {
-  const classes = classNames('pa-button', props.type, {
-    db: props.block
+const Button = ({
+  type,
+  block,
+  external,
+  href,
+  onClick,
+  children
+}) => {
+  const classes = classNames(styles.root, {
+    db: block
   });
 
   const attributes = {};
-  if (props.external) {
+  if (external) {
     attributes.target = '_blank';
     attributes.rel = 'noopener noreferrer';
   }
@@ -30,11 +36,12 @@ const Button = (props) => {
   return (
     <a
       className={classes}
-      href={props.href}
-      onClick={props.onClick}
+      href={href}
+      data-type={type}
+      onClick={onClick}
       {...attributes}
     >
-      {props.children}
+      {children}
     </a>
   );
 };

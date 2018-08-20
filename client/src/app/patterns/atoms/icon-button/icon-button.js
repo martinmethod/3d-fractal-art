@@ -8,22 +8,28 @@
 import React from 'react';
 
 // Styles
-import './icon-button.scss';
+import styles from './icon-button.scss';
 
 
 //--------------------------| Body
 
-
-const IconButton = props => (
+const IconButton = ({
+  active,
+  role,
+  mode,
+  onClick,
+  title,
+  className
+}) => (
   <a
-    className='pa-icon-button'
-    data-active={props.active}
-    data-role={props.role}
-    data-mode={props.mode}
-    onClick={props.onClick}
-    title={props.title}
+    className={`${styles.root} ${className}`}
+    data-active={active}
+    data-role={role}
+    data-mode={mode}
+    onClick={onClick}
+    title={title}
   >
-    <span className='glyph' />
+    <span className={styles.glyph} />
   </a>
 );
 

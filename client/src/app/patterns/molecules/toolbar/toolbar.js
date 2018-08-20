@@ -14,7 +14,7 @@ import GalleryController from '../../../controllers/gallery';
 import PlayerController from '../../../controllers/player';
 
 // Styles
-import './toolbar.scss';
+import styles from './toolbar.scss';
 
 
 //--------------------------| All controllers
@@ -33,10 +33,11 @@ const Toolbar = (props) => {
   const controllers = props.controllers.map(controller => allControllers[controller]);
 
   return (
-    <div className='pm-toolbar'>
+    <div className={styles.root}>
       {
         controllers.map((Controller, index) => (
           <Controller
+            className={styles.iconButton}
             key={index}
           />
         ))

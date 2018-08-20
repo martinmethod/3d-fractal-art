@@ -9,7 +9,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Styles
-import './player.scss';
+import styles from './player.scss';
 
 // Audio
 import audioFile from '../../../assets/audio/music.mp3';
@@ -31,7 +31,7 @@ class Player extends React.PureComponent {
   render() {
     return (
       <audio
-        className='module-player'
+        className={styles.root}
         loop='loop'
         ref={this.audioRef}
       >

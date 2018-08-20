@@ -2,10 +2,9 @@
 // MOLECULES: TOOLBAR
 
 
-.pm-toolbar {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include display-flex();
 
   position: absolute;
@@ -13,21 +12,20 @@
   left: 10px;
   z-index: 2;
 
-
-  //--------------------------| Breakpoints
-
   @media screen and (min-width: $breakpoint-desktop) {
     left: 50px;
   }
 
-
-  //--------------------------| Icon
-
-  .pa-icon-button {
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
+  @include mq-mobile() {
+    display: none;
   }
+}
 
 
-} // .pm-toolbar
+//--------------------------| Icon
+
+.icon-button {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}

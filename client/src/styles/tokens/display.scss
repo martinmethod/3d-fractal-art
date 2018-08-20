@@ -4,6 +4,8 @@
 
 //--------------------------| Block
 
-.db {
-  display: block;
+:global {
+  .db {
+    display: block;
+  }
 }

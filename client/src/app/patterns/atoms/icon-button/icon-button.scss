@@ -2,24 +2,23 @@
 // ATOMS: ICON BUTTON
 
 
-.pa-icon-button {
+//--------------------------| Data
 
-  //--------------------------| Data
+$glyph-size: 14px;
 
-  $glyph-size: 14px;
+$icons-path: '../../../../assets/icons';
 
-  $icons-path: '../../../../assets/icons';
-
-  $icons: (
-    'gallery': 'nav',
-    'author':  'profile',
-    'contact': 'email',
-    'player':  'volume'
-  );
+$icons: (
+  'gallery': 'nav',
+  'author':  'profile',
+  'contact': 'email',
+  'player':  'volume'
+);
 
 
-  //--------------------------| Base
+//--------------------------| Root
 
+.root {
   @include border-radius(50%);
   @include transition(background $transition-speed linear);
 
@@ -30,62 +29,58 @@
   font-size: 0;
   text-align: center;
 
-
-  //--------------------------| Glyph
-
-  .glyph {
-    display: inline-block;
-    width: $glyph-size;
-    height: $glyph-size;
-    margin-top: 7px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: $glyph-size auto;
-  }
-
-
-  //--------------------------| Roles
-
-  @each $role in ('gallery' 'author' 'contact' 'player') {
-    &[data-role='#{$role}'] .glyph {
-      $icon: map-get($icons, $role);
-      $path: '#{$icons-path}/icon-#{$icon}.svg';
-
-      background-image: url($path);
-    }
-  }
-
-  &[data-role='player'] {
-    &:not([data-mode]) {
-      pointer-events: none;
-      opacity: 0;
-    }
-
-    &[data-mode='pause'] span {
-      background-position: left top;
-    }
-
-    &[data-mode='play'] span {
-      background-position: left bottom;
-    }
-
-    @media screen and (max-width: $breakpoint-desktop - 1) {
-      display: none;
-    }
-  }
-
-
-  //--------------------------| States
-
-  // Hover
   &:hover {
-    background-color: rgba($col-black, .75);
+    background-color: rgba($col-black, 0.75);
   }
 
-  // Active
   &[data-active='true'] {
-    background-color: rgba($col-white, .25);
+    background-color: rgba($col-white, 0.25);
+  }
+}
+
+
+//--------------------------| Roles
+
+@each $role in ('gallery' 'author' 'contact' 'player') {
+  .root[data-role='#{$role}'] .glyph {
+    $icon: map-get($icons, $role);
+    $path: '#{$icons-path}/icon-#{$icon}.svg';
+
+    background-image: url($path);
+  }
+}
+
+
+//--------------------------| Player
+
+.root[data-role='player'] {
+  &:not([data-mode]) {
+    pointer-events: none;
+    opacity: 0;
   }
 
+  &[data-mode='pause'] span {
+    background-position: left top;
+  }
 
-} // .pa-icon-button
+  &[data-mode='play'] span {
+    background-position: left bottom;
+  }
+
+  @media screen and (max-width: $breakpoint-desktop - 1) {
+    display: none;
+  }
+}
+
+
+//--------------------------| Glyph
+
+.glyph {
+  display: inline-block;
+  width: $glyph-size;
+  height: $glyph-size;
+  margin-top: 7px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $glyph-size auto;
+}

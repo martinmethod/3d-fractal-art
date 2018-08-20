@@ -9,7 +9,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Styles
-import './arrows.scss';
+import styles from './arrows.scss';
 
 // Atoms
 import SliderArrow from '../../patterns/atoms/slider-arrow';
@@ -28,7 +28,7 @@ const Arrows = (props) => {
   const nextModel = getNextModel(props.model.id);
 
   return (
-    <div className='arrows' data-loaded={props.loaded}>
+    <div className={styles.root} data-loaded={props.loaded}>
       <SliderArrow
         direction='previous'
         title={prevModel.title}
