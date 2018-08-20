@@ -51,7 +51,7 @@ class DescriptionBox extends React.PureComponent {
             {
               example &&
               <Button
-                block
+                className={styles.button}
                 type='light'
                 onClick={() => this.setState(() => ({ isLightboxOpen: true }))}
               >
@@ -71,7 +71,7 @@ class DescriptionBox extends React.PureComponent {
             {
               storeKey &&
               <Button
-                block
+                className={styles.button}
                 external
                 href={gallery.storeUrl + storeKey}
               >

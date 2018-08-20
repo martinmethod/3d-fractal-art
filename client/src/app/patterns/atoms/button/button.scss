@@ -29,11 +29,6 @@ $bgr: darken($col-cyan, 20%);
   &:hover {
     background-color: lighten($bgr, 10%);
   }
-
-  // Use cases
-  &[class*='db'] + .root[class*='db'] {
-    margin-top: 10px;
-  }
 }
 
 

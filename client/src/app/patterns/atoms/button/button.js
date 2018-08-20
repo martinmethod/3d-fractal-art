@@ -10,7 +10,6 @@ import classNames from 'classnames';
 
 // Styles
 import styles from './button.scss';
-import '../../../../styles/tokens/display.scss';
 
 
 //--------------------------| Body
@@ -21,11 +20,10 @@ const Button = ({
   external,
   href,
   onClick,
-  children
+  children,
+  className
 }) => {
-  const classes = classNames(styles.root, {
-    db: block
-  });
+  const classes = classNames(styles.root, className);
 
   const attributes = {};
   if (external) {

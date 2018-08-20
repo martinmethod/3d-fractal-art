@@ -23,7 +23,7 @@
 
 //--------------------------| Previous
 
-.arrows [data-direction='previous'] {
+.root [data-direction='previous'] {
   left: $offset-main;
 
   span {
@@ -34,7 +34,7 @@
 
 //--------------------------| Next
 
-.arrows [data-direction='next'] {
+.root [data-direction='next'] {
   right: $offset-main;
 
   span {

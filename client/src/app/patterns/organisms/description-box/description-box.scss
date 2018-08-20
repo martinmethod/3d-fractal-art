@@ -30,7 +30,7 @@
 
 //--------------------------| Button
 
-.button {
+.root .button {
   display: inline-block;
   margin: 0 10px;
 }
@@ -55,9 +55,13 @@
     width: $description-box-width;
   }
 
-  .button {
+  .root .button {
     display: block;
     margin: 0 auto;
+
+    + .button {
+      margin-top: 10px;
+    }
   }
 }
 
