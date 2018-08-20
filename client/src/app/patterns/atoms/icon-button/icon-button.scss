@@ -54,7 +54,8 @@ $icons: (
 //--------------------------| Player
 
 .root[data-role='player'] {
-  &:not([data-mode]) {
+  &:not([data-mode]),
+  &[data-mode=''] {
     pointer-events: none;
     opacity: 0;
   }
