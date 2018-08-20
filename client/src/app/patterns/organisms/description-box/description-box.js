@@ -13,6 +13,7 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import lightbox from '../../../../styles/external/lightbox.scss';
 import styles from './description-box.scss';
+import textStyles from '../../../patterns/molecules/text/text.scss';
 
 // Atoms
 import Button from '../../atoms/button';
@@ -46,7 +47,7 @@ class DescriptionBox extends React.PureComponent {
       <div className={styles.root} data-loaded={this.props.loaded}>
         <div className='content'>
           <Text className={styles.text}>
-            <p>{description}</p>
+            <p className={textStyles.paragraph}>{description}</p>
             {
               example &&
               <Button
