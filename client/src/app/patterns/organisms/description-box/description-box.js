@@ -13,7 +13,7 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import lightbox from '../../../../styles/external/lightbox.scss';
 import styles from './description-box.scss';
-import textStyles from '../../../patterns/molecules/text/text.scss';
+import textStyles from '../../molecules/text/text.scss';
 
 // Atoms
 import Button from '../../atoms/button';
