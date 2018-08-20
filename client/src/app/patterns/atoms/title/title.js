@@ -29,13 +29,13 @@ const Title = (props) => {
     <h1 className='pa-title'>
       <a
         onClick={() => {
-        if (props.popover.active !== 'nav') {
-          props.dispatch(changePopoverState('nav'));
-        }
-        else {
-          props.dispatch(changePopoverState(''));
-        }
-      }}
+          if (props.popover.active !== 'nav') {
+            props.dispatch(changePopoverState('nav'));
+          }
+          else {
+            props.dispatch(changePopoverState(''));
+          }
+        }}
       >{title}</a>
     </h1>
   );

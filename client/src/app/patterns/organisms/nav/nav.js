@@ -30,11 +30,11 @@ import { loadModel } from '../../../actions/gallery';
 import { getCategoryByModelId } from '../../../helpers/models';
 
 // Atoms
-import XButton from '../../../patterns/atoms/x-button';
-import Thumb from '../../../patterns/atoms/thumb';
+import XButton from '../../atoms/x-button';
+import Thumb from '../../atoms/thumb';
 
 // Molecules
-import Popover from '../../../patterns/molecules/popover';
+import Popover from '../../molecules/popover';
 
 // Data
 import { models } from '../../../../data/models.json';

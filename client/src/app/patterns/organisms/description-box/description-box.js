@@ -15,10 +15,10 @@ import '../../../../styles/external/lightbox.scss';
 import './description-box.scss';
 
 // Atoms
-import Button from '../../../patterns/atoms/button';
+import Button from '../../atoms/button';
 
 // Molecules
-import Text from '../../../patterns/molecules/text';
+import Text from '../../molecules/text';
 
 // Data
 import { gallery } from '../../../../data/config.json';

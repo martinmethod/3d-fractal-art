@@ -38,8 +38,9 @@ import './app.scss';
 //--------------------------| Body
 
 class App extends React.PureComponent {
-  defineControllers = () => controllersList.filter(controller =>
-    config[controller] !== undefined);
+  defineControllers = () => controllersList.filter(
+    controller => config[controller] !== undefined
+  );
 
   state = {
     interaction: false
