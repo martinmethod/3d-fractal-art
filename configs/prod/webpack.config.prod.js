@@ -12,6 +12,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const pkg = require('../../package.json');
 const banner = require('./banner');
@@ -112,8 +113,8 @@ const config = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['**/*.*'], {
-      root:     dist,
+    new CleanWebpackPlugin(['client/dist', 'production.zip'], {
+      root:     path.join(__dirname, '../../'),
       verbose:  true,
       dry:      false
     }),
@@ -173,6 +174,16 @@ const config = {
       background: '#1ca9d9',
       // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
       title: pkg.title
+    }),
+    new FileManagerPlugin({
+      onEnd: {
+        archive: [
+          {
+            source: dist,
+            destination: './production.zip'
+          }
+        ]
+      }
     }),
     new webpack.BannerPlugin({ banner }),
     new webpack.optimize.OccurrenceOrderPlugin(),
