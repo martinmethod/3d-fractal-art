@@ -9,10 +9,9 @@
 
     //--------------------------| Base
 
-    @include transition(color $transition-speed linear);
-
     color: $col-cyan;
     cursor: pointer;
+    transition: color $transition-speed linear;
 
 
     //--------------------------| Hover

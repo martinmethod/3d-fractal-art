@@ -7,7 +7,8 @@
 const Webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const opn = require('opn');
-const config = require('../configs/dev/webpack.config.dev');
+const chalk = require('chalk');
+const webpackConfig = require('../configs/dev/webpack.config.dev');
 const pkg = require('../package.json');
 
 
@@ -19,7 +20,7 @@ const browser = process.platform === 'win32' ? 'Chrome' : '/Applications/Google 
 
 //--------------------------| Config
 
-const server = new WebpackDevServer(Webpack(config), {
+const server = new WebpackDevServer(Webpack(webpackConfig), {
   hot: true,
   historyApiFallback: true,
   // It suppress error shown in console, so it has to be set to false.
@@ -45,7 +46,7 @@ server.listen(port, 'localhost', function (err) {
     console.log(err);
   }
 
-  console.log(`Listening at localhost:${port}`);
+  console.log(chalk.green(`Listening at localhost:${port}`));
 
   opn(`http://localhost:${port}`, {
     app: browser

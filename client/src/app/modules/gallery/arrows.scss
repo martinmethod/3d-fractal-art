@@ -6,7 +6,7 @@
 
 .root {
   @media screen and (min-width: $breakpoint-desktop) {
-    @include transition(all $transition-speed linear);
+    transition: all $transition-speed linear;
 
     &[data-loaded='false'] {
       [data-direction='previous'] {

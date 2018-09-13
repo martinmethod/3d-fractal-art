@@ -10,8 +10,6 @@ $size: 30px;
 //--------------------------| Root
 
 .root {
-  @include border-radius(50%);
-
   position: absolute;
   right: 10px;
   bottom: 10px;
@@ -22,6 +20,7 @@ $size: 30px;
   background: url('../../../../assets/icons/icon-social-facebook.svg') no-repeat 3px 4px;
   background-color: $col-gray-darker;
   background-size: 66% auto;
+  border-radius: 50%;
 
   @include mq-tight-landscape() {
     display: none;

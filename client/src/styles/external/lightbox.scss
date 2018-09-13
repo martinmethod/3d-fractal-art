@@ -44,9 +44,6 @@ $lightbox-height-size: 40px;
 
   // X-close
   .ril-close {
-    @include transition(color $transition-speed linear);
-    @include opacity(1);
-
     width: $icon-size;
     height: $icon-size;
     font-size: 16px;
@@ -55,6 +52,8 @@ $lightbox-height-size: 40px;
     text-align: center;
     cursor: pointer;
     background: none;
+    transition: color $transition-speed linear;
+    opacity: 1;
 
     &::after {
       content: '✕';

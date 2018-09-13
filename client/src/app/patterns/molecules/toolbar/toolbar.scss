@@ -5,12 +5,11 @@
 //--------------------------| Root
 
 .root {
-  @include display-flex();
-
   position: absolute;
   bottom: $offset-main;
   left: 10px;
   z-index: 2;
+  display: flex;
 
   @media screen and (min-width: $breakpoint-desktop) {
     left: 50px;

@@ -5,19 +5,18 @@
 //--------------------------| Root
 
 .root {
-  @include border-radius(5px);
-  @include box-shadow($box-shadow);
-  @include display-flex();
-  @include flex-direction(column);
-
   position: absolute;
   right: $offset-main;
   bottom: 50px;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
   width: calc(100% - #{$offset-main * 2});
   overflow: hidden;
   text-align: center;
   background-color: $bgr-popover;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
 }
 
 
@@ -40,9 +39,8 @@
 
 @media screen and (min-width: $breakpoint-desktop) {
   .root {
-    @include transition(right $transition-speed linear);
-
     bottom: 80px;
+    transition: right $transition-speed linear;
 
     &[data-loaded='false'] {
       right: -#{$description-box-width + $offset-main + 10};

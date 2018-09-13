@@ -49,7 +49,7 @@ class App extends React.PureComponent {
   render() {
     return (
       <div
-        id='app'
+        className={styles.root}
         onMouseEnter={() => {
           if (!this.state.interaction) {
             if (this.props.player.mode === '') {

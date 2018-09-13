@@ -7,11 +7,11 @@ I've been dealing with the most complex Math object – Fractals – since Augus
 #
 *Technologies:* **ES6**, **HTML5**, **CSS3**
 
-*Libraries:* **[React](https://reactjs.org)**, **[Redux](https://redux.js.org/)**, **[Compass](http://compass-style.org)**
-
-*Preprocessors:* **[Sass](http://sass-lang.com)**, **[Babel](http://babeljs.io)**
+*Libraries:* **[React](https://reactjs.org)**, **[Redux](https://redux.js.org/)**
 
 *Linters:* **[ESLint](https://eslint.org)**, **[stylelint](https://stylelint.io)**
+
+*Compilers:* **[Babel](http://babeljs.io)**, **[PostCSS](https://postcss.org)**, **[Sass](http://sass-lang.com)**
 
 *Bundler:* **[Webpack](http://webpack.js.org)**
 

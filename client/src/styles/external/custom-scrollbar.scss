@@ -16,9 +16,8 @@
     //--------------------------| Bar
 
     .rcs-inner-handle {
-      @include transition(background-color $transition-speed linear);
-
       background-color: rgba($col-black, 0.3);
+      transition: background-color $transition-speed linear;
 
       &:hover,
       &:active {

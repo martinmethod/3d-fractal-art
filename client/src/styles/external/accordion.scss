@@ -12,21 +12,20 @@
   //--------------------------| Base
 
   .accordion {
-    @include border-radius(0);
-    @include display-flex();
-    @include flex-direction(column);
-    @include flex(1);
-
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     font-size: 16px;
     border: 0;
+    border-radius: 0;
   }
 
 
   //--------------------------| Item
 
   .accordion__item {
-    @include display-flex();
-    @include flex-direction(column);
+    display: flex;
+    flex-direction: column;
 
     & + .accordion__item {
       border-top-color: $col-gray-dark;
@@ -63,8 +62,7 @@
   //--------------------------| Body
 
   .accordion__body {
-    @include flex(1);
-
+    flex: 1;
     padding: 0;
 
     &[aria-hidden='false'] {

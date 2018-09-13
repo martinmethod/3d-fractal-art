@@ -6,6 +6,11 @@
   ],
   "rules": {
     "max-empty-lines": 2,
-    "order/properties-alphabetical-order": null
+    "order/properties-alphabetical-order": null,
+    "scss/at-rule-no-unknown": [ true, {
+      "ignoreAtRules": [
+        "util"
+      ]
+    }]
   }
 }

@@ -8,13 +8,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import 'normalize.css/normalize.css';
 
 // Store
 import configureStore from './app/store/configureStore';
 
 // Styles
-import './styles/scaffoldings/document.scss';
+import './styles/scaffoldings/base.scss';
 import './styles/scaffoldings/links.scss';
 
 // Images

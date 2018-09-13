@@ -10,24 +10,23 @@ $offset: 5px;
 //--------------------------| Root
 
 .root {
-  @include translateX(-120%);
-  @include transition(transform $transition-speed linear);
-  @include border-radius(0 5px 5px 0);
-  @include box-shadow($box-shadow);
-  @include box-sizing(border-box);
-  @include display-flex();
-  @include flex-direction(column);
-
   position: fixed;
   top: 72px;
   z-index: 2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   height: calc(100vh - 122px);
   overflow: hidden;
   background-color: $bgr-popover;
+  border-radius: 0 5px 5px 0;
+  box-shadow: $box-shadow;
+  transition: transform $transition-speed linear;
+  transform: translateX(-120%);
 
   // States
   &[data-visible='true'] {
-    @include translateX(0%);
+    transform: translateX(0%);
   }
 
   // Text

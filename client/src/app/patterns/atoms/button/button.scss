@@ -10,16 +10,15 @@ $bgr: darken($col-cyan, 20%);
 //--------------------------| Root
 
 .root {
-  @include transition(all 0.1s linear);
-  @include border-radius(3px);
-  @include display-flex();
-
+  display: flex;
   max-width: 180px;
   padding: 5px 20px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   background-color: $bgr;
+  border-radius: 3px;
+  transition: all 0.1s linear;
 
   &,
   &:hover {

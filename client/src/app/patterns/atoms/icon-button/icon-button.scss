@@ -19,15 +19,14 @@ $icons: (
 //--------------------------| Root
 
 .root {
-  @include border-radius(50%);
-  @include transition(background $transition-speed linear);
-
   display: block;
   width: $icon-size;
   height: $icon-size;
   overflow: hidden;
   font-size: 0;
   text-align: center;
+  border-radius: 50%;
+  transition: background $transition-speed linear;
 
   &:hover {
     background-color: rgba($col-black, 0.75);

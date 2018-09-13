@@ -5,9 +5,8 @@
 //--------------------------| Root
 
 .root {
-  @include user-select(none);
-
   width: $nav-width;
+  user-select: none;
 
   @include mq-mobile() {
     display: none;
@@ -18,7 +17,7 @@
 //--------------------------| Models nav
 
 .models-nav {
-  @include flex(1);
+  flex: 1;
 }
 
 
@@ -43,13 +42,13 @@
 //--------------------------| Link
 
 .link {
-  @include transition(background-color 0.1s linear);
-  @include ellipsis();
+  @util truncate;
 
   position: relative;
   display: block;
   padding: 5px 36px 5px 10px;
   line-height: 1.3;
+  transition: background-color 0.1s linear;
 
   &:hover {
     color: darken($col-cyan, 20%);
@@ -64,8 +63,6 @@
   i {
     $size: 14px;
 
-    @include translateY(-50%);
-
     position: absolute;
     top: 50%;
     right: 16px;
@@ -75,6 +72,7 @@
     content: '';
     background: url('../../../../assets/icons/icon-picture.svg') no-repeat center;
     background-size: $size auto;
+    transform: translateY(-50%);
   }
 }
 
