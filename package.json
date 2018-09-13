@@ -1,7 +1,7 @@
 {
   "name": "3d-fractal-art",
   "title": "3D Fractal Art",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "I've been dealing with the most complex Math object – Fractals – since August 1985. Now that 3D printing is a fact I can introduce you the beauty of formulas incarnated in Fractal Wall Art, Sculptures & Culinary.",
   "main": "client/src/index.js",
   "keywords": [
