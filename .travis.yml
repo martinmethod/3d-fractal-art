@@ -21,7 +21,7 @@ deploy:
   api_key:
     secure: a2JJyN8XPZHVe3JIyv5gQeljNfQZutwu2ngN5PpAQJwX8tEzj9EGIk5vXvmu43b/6j5fnHFy+yP7zqilTlvjA4Y3aFhDe32SCWqpOtqOUb9lqwcRQQHvUOFCkQUa412rsUZtq62DPuff1XWXL6MkZiQlvxXXpizMGAJpyOObiYWI105PjgS1ekojV1kVgmD/SWjJ1pF8etlBS831tBR760JuriHgTPuwgWT5Yocc79LbxT4LJwJ//1HY0Kt/Yt/y5L/uIOrgGdnGPXV+0bIDMmbueh7KobzdJTdO+iZddXLyUjetXzTPs+FOkI5CzYsiBcdifkP5IKk7sk6nAuXtc4grW/6xII/YUduhOw+gtncSkp50Jedy/4Y9CSaql0COWppKtZyAU6Uxzb+SU9jp3Igq334T29qolsWrGez71o1KvmgE9XEEJsXoM1vBACoPD/j2STZN6b0pAmXQZZuZm7tItRZd4HuRVVxxgg41xj9HTJSJZYbwITeK5/yyW12GQilMJR7o1H+g68fUj/u9h3HlACjaAzKPX304Q/VwdD96HtBoRyBe5F9cEb4lRjHf/NUuEqUX00FAOPs3i6hII1UFMO7g0xed4kzmo8DbR2sKarEzY3CxxIZ9i6n+89FGCcLyMpKauEzgYp5UALkGQsiFeHDEIyptI/WmG4LWB3w=
   skip_cleanup: true
-    file:
+  file:
     - 'production.zip'
   on:
     tags: true
