@@ -10,15 +10,12 @@ import { player } from '../../system/labels.json';
 
 //--------------------------| Default state
 
-const localState = JSON.parse(localStorage.getItem('art_state'));
-const playerReducerDefaultState = localState && localState.player ?
-  localState.player :
-  {
-    mode: '',
-    controllerTooltipText: playerInitialMode === 'play' ?
-      player.pause :
-      player.play
-  };
+const playerReducerDefaultState = {
+  mode: '',
+  controllerTooltipText: playerInitialMode === 'play' ?
+    player.pause :
+    player.play
+};
 
 
 //--------------------------| Export
