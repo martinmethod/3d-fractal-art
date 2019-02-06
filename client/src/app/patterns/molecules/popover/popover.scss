@@ -10,13 +10,13 @@ $offset: 5px;
 //--------------------------| Root
 
 .root {
-  position: fixed;
+  position: absolute;
   top: 72px;
   z-index: 2;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 122px);
+  height: calc(100% - 122px);
   overflow: hidden;
   background-color: $bgr-popover;
   border-radius: 0 5px 5px 0;

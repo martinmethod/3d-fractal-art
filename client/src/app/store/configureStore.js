@@ -15,11 +15,11 @@ import popoverReducer from '../reducers/popover';
 
 //--------------------------| Export
 
-export default () => createStore(
+export default initialModel => createStore(
   combineReducers({
-    gallery: galleryReducer,
-    player: playerReducer,
-    popover: popoverReducer
+    gallery: galleryReducer(initialModel),
+    player: playerReducer(),
+    popover: popoverReducer()
   }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && // eslint-disable-line no-underscore-dangle
   window.__REDUX_DEVTOOLS_EXTENSION__() // eslint-disable-line no-underscore-dangle

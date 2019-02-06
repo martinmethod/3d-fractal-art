@@ -16,10 +16,11 @@ const commonPlugins = glob.sync(`${__dirname}/../common/plugins/**/*.js`).map(fi
 
 const config = {
   mode: 'production',
-  entry: './client/src/index.js',
+  entry: './index.js',
   output: {
     path: path.join(__dirname, '../../client/dist'),
-    filename: 'app.[chunkhash].js'
+    filename: 'app.[chunkhash].js',
+    publicPath: '/'
   },
   module: {
     rules: [...loaders, ...commonLoaders]

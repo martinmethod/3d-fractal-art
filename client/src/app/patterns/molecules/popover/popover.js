@@ -7,6 +7,7 @@
 // Libraries
 import React from 'react';
 import { connect } from 'react-redux';
+import Div100vh from 'react-div-100vh';
 
 // Actions
 import changePopoverState from '../../../actions/popover';

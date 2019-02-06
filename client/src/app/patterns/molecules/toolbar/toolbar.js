@@ -29,13 +29,13 @@ const allControllers = {
 
 //--------------------------| Body
 
-const Toolbar = (props) => {
-  const controllers = props.controllers.map(controller => allControllers[controller]);
+const Toolbar = ({ controllers }) => {
+  const components = controllers.map(controller => allControllers[controller]);
 
   return (
     <div className={styles.root}>
       {
-        controllers.map((Controller, index) => (
+        components.map((Controller, index) => (
           <Controller
             className={styles.iconButton}
             key={index}

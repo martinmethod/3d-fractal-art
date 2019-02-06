@@ -8,6 +8,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CustomScroll from 'react-custom-scroll';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 // Styles
 import styles from './author.scss';
@@ -18,6 +19,9 @@ import '../../../styles/external/custom-scrollbar.scss';
 // Actions
 import changePopoverState from '../../actions/popover';
 
+// System
+import { authorLabel } from '../../../system/labels.json';
+
 // Atoms
 import XButton from '../../patterns/atoms/x-button';
 import Signature from '../../patterns/atoms/signature';
@@ -26,54 +30,51 @@ import Signature from '../../patterns/atoms/signature';
 import Popover from '../../patterns/molecules/popover';
 import Text from '../../patterns/molecules/text';
 
-// Data
-import authorData from '../../../data/author.json';
-import { author } from '../../../data/config.json';
-
-// Images
-import avatar from '../../../assets/images/author.png';
-
 
 //--------------------------| Body
 
-const Author = props => (
-  <section className={styles.root}>
-    <Popover className={styles.popover} visibility={props.popover.active === 'author'}>
-      <XButton
-        className={popoverStyles.xButton}
-        onClick={() => {
-          if (props.popover.active !== 'author') {
-            props.dispatch(changePopoverState('author'));
-          }
-          else {
-            props.dispatch(changePopoverState(''));
-          }
-        }}
-      />
-      <h2 className={popoverStyles.ttl}>{author.title}</h2>
+const Author = ({ data, dispatch, popover }) => {
+  const name = `${data.firstName} ${data.lastName}`;
 
-      <div style={{ flex: 1, minHeight: 0, minWidth: 0 }}>
-        <CustomScroll heightRelativeToParent='100%'>
-          <div>
-            <Text className={popoverStyles.text}>
-              <img className={textStyles.image} src={avatar} alt={authorData.name} />
+  return (
+    <section className={styles.root}>
+      <Popover className={styles.popover} visibility={popover.active === 'author'}>
+        <XButton
+          className={popoverStyles.xButton}
+          onClick={() => {
+            if (popover.active !== 'author') {
+              dispatch(changePopoverState('author'));
+            }
+            else {
+              dispatch(changePopoverState(''));
+            }
+          }}
+        />
+        <h2 className={popoverStyles.ttl}>{authorLabel}</h2>
 
-              {
-                authorData.text.map((text, index) => (
-                  <p className={textStyles.paragraph} key={index}>{text}</p>
-                ))
-              }
+        <div style={{ flex: 1, minHeight: 0, minWidth: 0 }}>
+          <CustomScroll heightRelativeToParent='100%'>
+            <div>
+              <Text className={popoverStyles.text}>
+                <img className={textStyles.image} src={data.avatar.fields.file.url} alt={name} />
 
-              <Signature>
-                — <a href={`mailto:${authorData.email}`}>{authorData.name}</a>
-              </Signature>
-            </Text>
-          </div>
-        </CustomScroll>
-      </div>
-    </Popover>
-  </section>
-);
+                <div
+                  dangerouslySetInnerHTML = {{
+                    __html: documentToHtmlString(data.summary)
+                  }}
+                />
+
+                <Signature>
+                  — <a href={`mailto:${data.email}`}>{name}</a>
+                </Signature>
+              </Text>
+            </div>
+          </CustomScroll>
+        </div>
+      </Popover>
+    </section>
+  );
+};
 
 
 //--------------------------| State to Props

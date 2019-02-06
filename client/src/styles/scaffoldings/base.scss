@@ -13,11 +13,6 @@
 // 6. Change the default tap highlight to be completely transparent in iOS.
 
 
-//--------------------------| Normalize
-
-@import 'normalize.css';
-
-
 //--------------------------| Box model
 
 *,
@@ -37,9 +32,9 @@ body {
   position: fixed;
   width: 100vw;
   min-width: $app-min-width;
-  height: 100vh;
   margin: 0;
   overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
   color: $col-gray-dark;
   background-color: $col-gray-dark;
   user-select: none;
@@ -48,7 +43,6 @@ body {
 
 html,
 body {
-  min-height: 100vh;
   overflow: hidden;
 }
 

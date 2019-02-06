@@ -25,9 +25,9 @@ const plugin = new FaviconsWebpackPlugin({
   // Inject the html into the html-webpack-plugin
   inject: true,
   // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-  background: '#fff',
+  background: '#1ca9d9',
   // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-  title: title.split(' ')[0]
+  title
 });
 
 

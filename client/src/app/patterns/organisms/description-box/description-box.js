@@ -9,6 +9,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Lightbox from 'react-image-lightbox';
 
+// Services
+import { getStoreUrl } from '../../../services/data';
+
 // Styles
 import 'react-image-lightbox/style.css';
 import lightbox from '../../../../styles/external/lightbox.scss';
@@ -21,9 +24,6 @@ import Button from '../../atoms/button';
 // Molecules
 import Text from '../../molecules/text';
 
-// Data
-import { gallery } from '../../../../data/config.json';
-
 
 //--------------------------| Body
 
@@ -35,9 +35,7 @@ class DescriptionBox extends React.PureComponent {
   render() {
     const { isLightboxOpen } = this.state;
     const {
-      name,
       title,
-      category,
       example,
       description,
       storeKey
@@ -62,7 +60,7 @@ class DescriptionBox extends React.PureComponent {
               example && isLightboxOpen && (
                 <Lightbox
                   enableZoom={false}
-                  mainSrc={`images/examples/${category}/${name}.jpg`}
+                  mainSrc={example.fields.file.url}
                   onCloseRequest={() => this.setState(() => ({ isLightboxOpen: false }))}
                   imageTitle={title}
                 />
@@ -73,7 +71,7 @@ class DescriptionBox extends React.PureComponent {
               <Button
                 className={styles.button}
                 external
-                href={gallery.storeUrl + storeKey}
+                href={getStoreUrl(storeKey)}
               >
                 Buy now
               </Button>

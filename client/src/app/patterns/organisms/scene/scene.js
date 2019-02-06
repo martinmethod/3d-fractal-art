@@ -8,14 +8,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-// Styles
-import styles from './scene.scss';
-
 // Actions
 import { loadModelInfo } from '../../../actions/gallery';
 
-// Helpers
-import { getModelById, getProductUrl } from '../../../helpers/models';
+// Services
+import { getModelById, getProductUrl, getCategoryByModelId } from '../../../services/data';
+
+// Styles
+import styles from './scene.scss';
 
 
 //--------------------------| Body
@@ -33,7 +33,8 @@ class Scene extends React.PureComponent {
 
   loadModelInfo() {
     const model = getModelById(this.props.id);
-    // window.location.hash = `${model.category}_${model.name}`;
+    const category = getCategoryByModelId(this.props.id);
+    window.location.hash = `${category.id}_${model.name}`;
 
     const timeout = this.state.desktop ? 5000 : 0;
 
@@ -53,6 +54,8 @@ class Scene extends React.PureComponent {
   }
 
   render() {
+    const model = getModelById(this.props.id);
+
     return (
       <div className={styles.root}>
         {
@@ -61,15 +64,15 @@ class Scene extends React.PureComponent {
             className={styles.frame}
             frameBorder='0'
             allow='vr'
-            allowFullScreen='false'
+            allowFullScreen={false}
             mozallowfullscreen='false'
             webkitallowfullscreen='false'
-            src={getProductUrl(this.props.id)}
+            src={getProductUrl(model.id)}
           />
         }
         {
           !this.state.desktop &&
-          <img className={styles.image} src={`images/models/${getModelById(this.props.id).category}/${getModelById(this.props.id).name}.jpg`} />
+          <img className={styles.image} src={model.image.fields.file.url} />
         }
       </div>
     );

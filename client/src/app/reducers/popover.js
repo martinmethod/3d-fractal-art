@@ -4,7 +4,7 @@
 
 //--------------------------| Default state
 
-const localState = JSON.parse(localStorage.getItem('state'));
+const localState = JSON.parse(localStorage.getItem('art_state'));
 const popoverReducerDefaultState = localState && localState.popover ?
   localState.popover :
   { active: '' };
@@ -12,7 +12,7 @@ const popoverReducerDefaultState = localState && localState.popover ?
 
 //--------------------------| Export
 
-export default (state = popoverReducerDefaultState, action) => {
+export default () => (state = popoverReducerDefaultState, action) => {
   switch (action.type) {
     default:
       return state;

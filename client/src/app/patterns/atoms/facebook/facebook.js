@@ -10,20 +10,17 @@ import React from 'react';
 // Styles
 import styles from './facebook.scss';
 
-// Data
-import { facebook } from '../../../../data/config.json';
-
 
 //--------------------------| Body
 
 
-const Facebook = props => (
+const Facebook = ({ data }) => (
   <a
     className={styles.root}
-    href={facebook.controllerURL}
+    href={data.url}
     target='_blank'
     rel='noopener noreferrer'
-    title={facebook.tooltipText}
+    title={`${data.title} on ${data.name}`}
   >
   </a>
 );

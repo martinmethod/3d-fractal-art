@@ -17,30 +17,30 @@ import SliderArrow from '../../patterns/atoms/slider-arrow';
 // Actions
 import { loadModel } from '../../actions/gallery';
 
-// Helpers
-import { getPrevModel, getNextModel } from '../../helpers/models';
+// Services
+import { getPrevModel, getNextModel } from '../../services/data';
 
 
 //--------------------------| Body
 
-const Arrows = (props) => {
-  const prevModel = getPrevModel(props.model.id);
-  const nextModel = getNextModel(props.model.id);
+const Arrows = ({ model, loaded, dispatch }) => {
+  const prevModel = getPrevModel(model.id);
+  const nextModel = getNextModel(model.id);
 
   return (
-    <div className={styles.root} data-loaded={props.loaded}>
+    <div className={styles.root} data-loaded={loaded}>
       <SliderArrow
         direction='previous'
         title={prevModel.title}
         onClick={() => {
-          props.dispatch(loadModel(prevModel.id));
+          dispatch(loadModel(prevModel.id));
         }}
       />
       <SliderArrow
         direction='next'
         title={nextModel.title}
         onClick={() => {
-          props.dispatch(loadModel(nextModel.id));
+          dispatch(loadModel(nextModel.id));
         }}
       />
     </div>

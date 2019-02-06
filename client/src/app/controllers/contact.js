@@ -7,11 +7,14 @@
 // Libraries
 import React from 'react';
 
+// Services
+import { getAuthor } from '../services/data';
+
+// System
+import { contactLabel } from '../../system/labels.json';
+
 // Atoms
 import IconButton from '../patterns/atoms/icon-button';
-
-// Data
-import { contact } from '../../data/config.json';
 
 
 //--------------------------| Body
@@ -20,9 +23,9 @@ const ContactController = props => (
   <IconButton
     role='contact'
     className={props.className}
-    title={contact.controllerTooltipText}
+    title={contactLabel}
     onClick={() => {
-      window.location.href = `mailto:${contact.email}`;
+      window.location.href = `mailto:${getAuthor().fields.email}`;
     }}
     {...props}
   />

@@ -11,11 +11,11 @@ import { connect } from 'react-redux';
 // Actions
 import changePopoverState from '../actions/popover';
 
+// System
+import { authorLabel } from '../../system/labels.json';
+
 // Atoms
 import IconButton from '../patterns/atoms/icon-button';
-
-// Data
-import { author } from '../../data/config.json';
 
 
 //--------------------------| Body
@@ -24,7 +24,7 @@ const AuthorController = props => (
   <IconButton
     role='author'
     className={props.className}
-    title={author.title}
+    title={authorLabel}
     active={props.popover.active === 'author'}
     onClick={() => {
       if (props.popover.active !== 'author') {

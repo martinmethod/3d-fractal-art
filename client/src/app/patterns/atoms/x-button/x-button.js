@@ -7,6 +7,9 @@
 // Libraries
 import React from 'react';
 
+// System
+import { closeLabel } from '../../../../system/labels.json';
+
 // Styles
 import styles from './x-button.scss';
 
@@ -18,7 +21,7 @@ const XButton = ({ onClick, className }) => (
   <a
     className={`${styles.root} ${className} link`}
     onClick={onClick}
-    title='Close'
+    title={closeLabel}
   >
     ✕
   </a>

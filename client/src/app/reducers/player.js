@@ -4,25 +4,26 @@
 
 //--------------------------| Import
 
-import { player } from '../../data/config.json';
+import { playerInitialMode } from '../../system/config.json';
+import { player } from '../../system/labels.json';
 
 
 //--------------------------| Default state
 
-const localState = JSON.parse(localStorage.getItem('state'));
+const localState = JSON.parse(localStorage.getItem('art_state'));
 const playerReducerDefaultState = localState && localState.player ?
   localState.player :
   {
     mode: '',
-    controllerTooltipText: player.mode === 'play' ?
-      player.controllerTooltipText.pause :
-      player.controllerTooltipText.play
+    controllerTooltipText: playerInitialMode === 'play' ?
+      player.pause :
+      player.play
   };
 
 
 //--------------------------| Export
 
-export default (state = playerReducerDefaultState, action) => {
+export default () => (state = playerReducerDefaultState, action) => {
   switch (action.type) {
     default:
       return state;
@@ -30,13 +31,13 @@ export default (state = playerReducerDefaultState, action) => {
     case 'PLAY':
       return {
         mode: 'play',
-        controllerTooltipText: player.controllerTooltipText.pause
+        controllerTooltipText: player.pause
       };
 
     case 'PAUSE':
       return {
         mode: 'pause',
-        controllerTooltipText: player.controllerTooltipText.play
+        controllerTooltipText: player.play
       };
   }
 };

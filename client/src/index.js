@@ -1,5 +1,5 @@
 //====================================================|
-// SWITCHBOARD A17
+// 3D FRACTAL ART
 
 
 //--------------------------| Import
@@ -7,14 +7,21 @@
 // Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactGA from 'react-ga';
 import { Provider } from 'react-redux';
+import { stringify } from 'flatted/esm';
+
+// Services
+import requestContent from './app/services/contentful';
 
 // Store
 import configureStore from './app/store/configureStore';
 
 // Styles
+import 'normalize.css';
 import './styles/scaffoldings/base.scss';
 import './styles/scaffoldings/links.scss';
+import './styles/scaffoldings/spinner.scss';
 
 // Images
 import './assets/images/logo.png';
@@ -23,30 +30,44 @@ import './assets/images/logo.png';
 import App from './app';
 
 
-//--------------------------| Body
+//--------------------------| Initialize
 
-const root = document.createElement('div');
+const init = async ({
+  contentfulAccessToken,
+  contentfulSpace,
+  gaNumber
+}) => {
+  try {
+    // Store content
+    const content = await requestContent(contentfulAccessToken, contentfulSpace);
+    localStorage.setItem('art_content', stringify(content));
 
-root.id = 'root';
+    // State store
+    const stateStore = configureStore(content.fields.initialModel);
+    stateStore.subscribe(() => {
+      localStorage.setItem('art_state', JSON.stringify(stateStore.getState()));
+    });
 
-document.body.appendChild(root);
+    // Google Analytics (only for production)
+    if (process.env.NODE_ENV === 'production') {
+      ReactGA.initialize(gaNumber);
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
+
+    // Render
+    ReactDOM.render((
+      <Provider store={ stateStore }>
+        <App content={content} />
+      </Provider>
+    ), document.getElementById('root'));
+  }
+  catch (error) {
+    console.error('No content found', error);
+    // TODO: Display "No content found"
+  }
+};
 
 
-//--------------------------| State store
+//--------------------------| Export
 
-const stateStore = configureStore();
-
-stateStore.subscribe(() => {
-  localStorage.setItem('state', JSON.stringify(stateStore.getState()));
-});
-
-
-//--------------------------| Render
-
-const jsx = (
-  <Provider store={ stateStore }>
-    <App />
-  </Provider>
-);
-
-ReactDOM.render(jsx, root);
+export default init;

@@ -10,6 +10,10 @@ import { hot } from 'react-hot-loader';
 // Libraries
 import React from 'react';
 import { connect } from 'react-redux';
+import Div100vh from 'react-div-100vh';
+
+// System
+import { modules } from '../system/config.json';
 
 // Actions
 import { playMusic } from './actions/player';
@@ -27,10 +31,6 @@ import Gallery from './modules/gallery';
 import Author from './modules/author';
 import Player from './modules/player';
 
-// Data
-import config from '../data/config.json';
-import { controllersList } from '../data/controllers.json';
-
 // Styles
 import styles from './app.scss';
 
@@ -38,40 +38,43 @@ import styles from './app.scss';
 //--------------------------| Body
 
 class App extends React.PureComponent {
-  defineControllers = () => controllersList.filter(
-    controller => config[controller] !== undefined
-  );
-
   state = {
     interaction: false
   };
 
   render() {
-    return (
-      <div
-        className={styles.root}
-        onMouseEnter={() => {
-          if (!this.state.interaction) {
-            if (this.props.player.mode === '') {
-              this.props.dispatch(playMusic());
-            }
+    const content = this.props.content.fields;
 
-            this.setState(prevState => ({
-              interaction: !prevState.interaction
-            }));
-          }
-        }}
-      >
-        <header className={styles.head}>
-          <Title />
-          <Subtitle>{config.subtitle}</Subtitle>
-        </header>
-        <Toolbar controllers={this.defineControllers()} />
-        { config.gallery && <Gallery /> }
-        { config.author && <Author /> }
-        { config.player && <Player /> }
-        { config.facebook && <FacebookIcon /> }
-      </div>
+    return (
+      <Div100vh>
+        <div
+          className={styles.root}
+          onMouseEnter={() => {
+            if (!this.state.interaction) {
+              if (this.props.player.mode === '') {
+                this.props.dispatch(playMusic());
+              }
+
+              this.setState(prevState => ({
+                interaction: !prevState.interaction
+              }));
+            }
+          }}
+        >
+          <header className={styles.head}>
+            <Title title={content.title} />
+            <Subtitle>{content.subtitle}</Subtitle>
+          </header>
+          <Toolbar controllers={modules} />
+          {modules.indexOf('gallery') !== -1 && <Gallery />}
+          {modules.indexOf('author') !== -1 && <Author data={content.author.fields} />}
+          {modules.indexOf('player') !== -1 && <Player source={content.music.fields} />}
+          <FacebookIcon data={{
+            title: content.title,
+            ...content.accounts[0].fields
+          }} />
+        </div>
+      </Div100vh>
     );
   }
 }

@@ -9,25 +9,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 
+// Services
+import { getCategories } from '../../../services/data';
+
 // Styles
 import styles from './thumb.scss';
-
-// Data
-import { models } from '../../../../data/models.json';
 
 
 //--------------------------| Body
 
-const Thumb = props => (
+const Thumb = ({ model, active }) => (
   <div className={styles.root}>
     {
-      models.map(cat => cat.models.map(m => (
+      getCategories().map(cat => cat.fields.fractals.map(m => (
         <img
-          key={m.id}
-          src={`images/thumbs/${cat.name}/${m.name}.png`}
+          key={m.fields.id}
+          src={m.fields.thumb.fields.file.url}
           className={classNames(styles.image, {
-            [styles.active]: m.id === props.active,
-            [styles.current]: m.id === props.model.id
+            [styles.active]: m.fields.id === active,
+            [styles.current]: m.fields.id === model
           })}
         />
       )))
@@ -39,7 +39,7 @@ const Thumb = props => (
 //--------------------------| State to Props
 
 const mapStateToProps = state => ({
-  model: state.gallery.model
+  model: state.gallery.id
 });
 
 

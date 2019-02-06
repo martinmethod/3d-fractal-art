@@ -8,36 +8,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-// Styles
-import styles from './title.scss';
+// Services
+import { getCategoryByModelId } from '../../../services/data';
 
 // Actions
 import changePopoverState from '../../../actions/popover';
 
-// Helpers
-import { getCategoryByName } from '../../../helpers/models';
+// Styles
+import styles from './title.scss';
 
 
 //--------------------------| Body
 
 
-const Title = (props) => {
-  const category = getCategoryByName(props.model.category);
-  const title = `3D Fractal Art: ${category.title}`;
+const Title = ({
+  title,
+  model,
+  popover,
+  dispatch
+}) => {
+  const category = getCategoryByModelId(model.id);
 
   return (
     <h1 className={styles.root}>
       <a
         className={styles.link}
         onClick={() => {
-          if (props.popover.active !== 'nav') {
-            props.dispatch(changePopoverState('nav'));
+          if (popover.active !== 'nav') {
+            dispatch(changePopoverState('nav'));
           }
           else {
-            props.dispatch(changePopoverState(''));
+            dispatch(changePopoverState(''));
           }
         }}
-      >{title}</a>
+      >{`${title}: ${category.title}`}</a>
     </h1>
   );
 };

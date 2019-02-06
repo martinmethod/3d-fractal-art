@@ -14,8 +14,8 @@ import changePopoverState from '../actions/popover';
 // Atoms
 import IconButton from '../patterns/atoms/icon-button';
 
-// Data
-import { gallery } from '../../data/config.json';
+// System
+import { navLabel } from '../../system/labels.json';
 
 
 //--------------------------| Body
@@ -24,7 +24,7 @@ const GalleryController = props => (
   <IconButton
     role='gallery'
     className={props.className}
-    title={gallery.navLabel}
+    title={navLabel}
     active={props.popover.active === 'nav'}
     onClick={() => {
       if (props.popover.active !== 'nav') {

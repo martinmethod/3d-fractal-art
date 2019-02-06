@@ -1,0 +1,9 @@
+{
+  "modules": [
+    "gallery",
+    "author",
+    "contact",
+    "player"
+  ],
+  "playerInitialMode": "play"
+}

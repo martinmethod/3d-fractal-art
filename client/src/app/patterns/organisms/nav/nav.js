@@ -27,8 +27,11 @@ import popoverStyles from '../../molecules/popover/popover.scss';
 import changePopoverState from '../../../actions/popover';
 import { loadModel } from '../../../actions/gallery';
 
-// Helpers
-import { getCategoryByModelId } from '../../../helpers/models';
+// Services
+import { getCategories, getCategoryByModelId } from '../../../services/data';
+
+// System
+import { navLabel, exampleLabel } from '../../../../system/labels.json';
 
 // Atoms
 import XButton from '../../atoms/x-button';
@@ -36,10 +39,6 @@ import Thumb from '../../atoms/thumb';
 
 // Molecules
 import Popover from '../../molecules/popover';
-
-// Data
-import { models } from '../../../../data/models.json';
-import { gallery } from '../../../../data/config.json';
 
 
 //--------------------------| Body
@@ -64,32 +63,32 @@ class Nav extends React.PureComponent {
               }
             }}
           />
-          <h2 className={popoverStyles.ttl}>{gallery.navLabel}</h2>
+          <h2 className={popoverStyles.ttl}>{navLabel}</h2>
           <Thumb active={this.state.mouseover} />
 
           <div className={styles.modelsNav}>
             <Accordion>
               {
-                models.map((cat, index) => (
+                getCategories().map((cat, index) => (
                   <AccordionItem
                     key={index}
-                    expanded={getCategoryByModelId(this.props.id).name === cat.name}
+                    expanded={getCategoryByModelId(this.props.id).id === cat.fields.id}
                   >
                     <AccordionItemTitle>
-                      {cat.title}
+                      {cat.fields.title}
                     </AccordionItemTitle>
                     <AccordionItemBody>
                       <CustomScroll heightRelativeToParent='100%'>
                         <ul className={styles.modelsList}>
                           {
-                            cat.models.map(m => (
-                              <li className={styles.modelItem} key={m.id}>
+                            cat.fields.fractals.map(m => (
+                              <li className={styles.modelItem} key={m.fields.id}>
                                 <a
                                   className={styles.link}
-                                  data-selected={this.props.id === m.id}
+                                  data-selected={this.props.id === m.fields.id}
                                   onMouseEnter={() => {
                                     this.setState(() => ({
-                                      mouseover: m.id
+                                      mouseover: m.fields.id
                                     }));
                                   }}
                                   onMouseLeave={() => {
@@ -98,11 +97,11 @@ class Nav extends React.PureComponent {
                                     }));
                                   }}
                                   onClick={() => {
-                                    this.props.dispatch(loadModel(m.id));
+                                    this.props.dispatch(loadModel(m.fields.id));
                                   }}
                                 >
-                                  {m.title}
-                                  {m.example && <i title={gallery.exampleLabel} />}
+                                  {m.fields.title}
+                                  {m.fields.example && <i title={exampleLabel} />}
                                 </a>
                               </li>
                             ))

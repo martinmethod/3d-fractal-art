@@ -1,0 +1,11 @@
+{
+  "navLabel": "List of works",
+  "exampleLabel": "This model has an example",
+  "authorLabel": "Author statement",
+  "contactLabel": "Write me a note",
+  "closeLabel": "Close",
+  "player": {
+    "play": "Play the music",
+    "pause": "Pause the music"
+  }
+}

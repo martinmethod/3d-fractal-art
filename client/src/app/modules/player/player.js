@@ -11,9 +11,6 @@ import { connect } from 'react-redux';
 // Styles
 import styles from './player.scss';
 
-// Audio
-import audioFile from '../../../assets/audio/music.mp3';
-
 
 //--------------------------| Body
 
@@ -39,7 +36,7 @@ class Player extends React.PureComponent {
         loop='loop'
         ref={this.audioRef}
       >
-        <source src={audioFile} type='audio/mpeg'/>
+        <source src={this.props.source.file.url} type='audio/mpeg'/>
       </audio>
     );
   }
