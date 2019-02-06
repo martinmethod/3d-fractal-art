@@ -49,7 +49,7 @@ class App extends React.PureComponent {
       <Div100vh>
         <div
           className={styles.root}
-          onMouseEnter={() => {
+          onClick={() => {
             if (!this.state.interaction) {
               if (this.props.player.mode === '') {
                 this.props.dispatch(playMusic());
