@@ -6,6 +6,7 @@
 
 // Libraries
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 // Controllers
 import AuthorController from '../../../controllers/author';
@@ -29,7 +30,8 @@ const allControllers = {
 
 //--------------------------| Body
 
-const Toolbar = ({ controllers }) => {
+const Toolbar = (props) => {
+  const controllers = isMobile ? props.controllers.filter(controller => controller !== 'player') : props.controllers;
   const components = controllers.map(controller => allControllers[controller]);
 
   return (

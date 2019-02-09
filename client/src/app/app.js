@@ -11,6 +11,7 @@ import { hot } from 'react-hot-loader';
 import React from 'react';
 import { connect } from 'react-redux';
 import Div100vh from 'react-div-100vh';
+import { isMobile } from 'react-device-detect';
 
 // System
 import { modules } from '../system/config.json';
@@ -50,7 +51,7 @@ class App extends React.PureComponent {
         <div
           className={styles.root}
           onClick={() => {
-            if (!this.state.interaction) {
+            if (!this.state.interaction && !isMobile) {
               if (this.props.player.mode === '') {
                 this.props.dispatch(playMusic());
               }
@@ -68,7 +69,7 @@ class App extends React.PureComponent {
           <Toolbar controllers={modules} />
           {modules.indexOf('gallery') !== -1 && <Gallery />}
           {modules.indexOf('author') !== -1 && <Author data={content.author.fields} />}
-          {modules.indexOf('player') !== -1 && <Player source={content.music.fields} />}
+          {modules.indexOf('player') !== -1 && isMobile && <Player source={content.music.fields} />}
           <FacebookIcon data={{
             title: content.title,
             ...content.accounts[0].fields

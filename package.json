@@ -46,6 +46,7 @@
     "react": "^16.8.0",
     "react-accessible-accordion": "^2.4.5",
     "react-custom-scroll": "^4.0.1",
+    "react-device-detect": "^1.6.2",
     "react-div-100vh": "^0.3.2",
     "react-dom": "^16.8.0",
     "react-ga": "^2.5.7",
