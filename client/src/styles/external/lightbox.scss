@@ -59,8 +59,10 @@ $lightbox-height-size: 40px;
       content: '✕';
     }
 
-    &:hover {
-      color: rgba($col-cyan, 0.7) !important;
+    @media (hover: hover) {
+      &:hover {
+        color: rgba($col-cyan, 0.7) !important;
+      }
     }
   }
 

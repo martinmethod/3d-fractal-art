@@ -50,9 +50,11 @@
   line-height: 1.3;
   transition: background-color 0.1s linear;
 
-  &:hover {
-    color: darken($col-cyan, 20%);
-    background-color: rgba($col-black, 0.05);
+  @media (hover: hover) {
+    &:hover {
+      color: darken($col-cyan, 20%);
+      background-color: rgba($col-black, 0.05);
+    }
   }
 
   &[data-selected='true'] {

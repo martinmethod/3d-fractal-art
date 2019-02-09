@@ -28,8 +28,10 @@ $icons: (
   border-radius: 50%;
   transition: background $transition-speed linear;
 
-  &:hover {
-    background-color: rgba($col-black, 0.75);
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba($col-black, 0.75);
+    }
   }
 
   &[data-active='true'] {

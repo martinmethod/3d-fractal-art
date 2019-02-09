@@ -16,8 +16,10 @@
 
     //--------------------------| Hover
 
-    &:hover {
-      color: rgba($col-cyan, 0.7);
+    @media (hover: hover) {
+      &:hover {
+        color: rgba($col-cyan, 0.7);
+      }
     }
 
   }

@@ -19,7 +19,12 @@
       background-color: rgba($col-black, 0.3);
       transition: background-color $transition-speed linear;
 
-      &:hover,
+      @media (hover: hover) {
+        &:hover:not(:active) {
+          background-color: rgba($col-black, 0.6);
+        }
+      }
+
       &:active {
         background-color: rgba($col-black, 0.6);
       }

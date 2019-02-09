@@ -10,6 +10,7 @@
   z-index: 2;
   font-size: 13px;
   font-weight: 300;
+  color: $col-white;
   text-transform: lowercase;
   cursor: pointer;
   transform: translateY(-50%);
@@ -36,12 +37,10 @@
     background-size: $arrow-size auto;
   }
 
-  &,
-  &:hover {
-    color: $col-white;
-  }
-
-  &:hover {
-    text-decoration: underline;
+  @media (hover: hover) {
+    &:hover {
+      color: $col-white;
+      text-decoration: underline;
+    }
   }
 }
