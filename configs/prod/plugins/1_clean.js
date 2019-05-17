@@ -10,10 +10,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 //--------------------------| Configuration
 
-const plugin = new CleanWebpackPlugin([
-  'client/dist',
-  'production.zip'
-], {
+const plugin = new CleanWebpackPlugin({
   root:     path.join(__dirname, '../../../'),
   verbose:  true,
   dry:      false
