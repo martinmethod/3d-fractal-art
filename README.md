@@ -1,4 +1,4 @@
-# 3D Fractal Art
+# Math Art
 
 [![Travis](https://img.shields.io/travis/martinmethod/3d-fractal-art.svg)](https://travis-ci.org/martinmethod/3d-fractal-art) [![David](https://img.shields.io/david/martinmethod/3d-fractal-art.svg)](https://david-dm.org/martinmethod/3d-fractal-art) [![David](https://img.shields.io/david/dev/martinmethod/3d-fractal-art.svg)](https://david-dm.org/martinmethod/3d-fractal-art?type=dev) [![GitHub release](https://img.shields.io/github/release/martinmethod/3d-fractal-art.svg)](https://github.com/martinmethod/3d-fractal-art/releases/latest)
 
