@@ -31,7 +31,7 @@ import { loadModel } from '../../../actions/gallery';
 import { getCategories, getCategoryByModelId } from '../../../services/data';
 
 // System
-import { navLabel, exampleLabel } from '../../../../system/labels.json';
+import { navLabel, exampleLabel, twoDAbstractionsLabel } from '../../../../system/labels.json';
 
 // Atoms
 import XButton from '../../atoms/x-button';
@@ -67,6 +67,7 @@ class Nav extends React.PureComponent {
           <Thumb active={this.state.mouseover} />
 
           <div className={styles.modelsNav}>
+            <a className={styles.link} style={{ textAlign: 'center', padding: '0.5em 0' }} href='https://mathbeauty.houzz.com/' target='_blank' rel='noopener noreferrer'>{ twoDAbstractionsLabel }</a>
             <Accordion>
               {
                 getCategories().map((cat, index) => (

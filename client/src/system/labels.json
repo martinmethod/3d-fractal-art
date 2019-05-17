@@ -4,6 +4,7 @@
   "authorLabel": "Author statement",
   "contactLabel": "Write me a note",
   "closeLabel": "Close",
+  "twoDAbstractionsLabel": "2D Abstractions",
   "player": {
     "play": "Play the music",
     "pause": "Pause the music"
