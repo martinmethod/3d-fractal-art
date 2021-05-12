@@ -90,7 +90,7 @@
     "node-sass": "^4.12.0",
     "opn": "^6.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss": "^7.0.16",
+    "postcss": "^8.2.10",
     "postcss-color-function": "^4.1.0",
     "postcss-discard-comments": "^4.0.2",
     "postcss-easing-gradients": "^3.0.1",
